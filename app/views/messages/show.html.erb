@@ -1,0 +1,7 @@
+<h4>Sent: <%= @message.transform_date %></h4></h4>
+<h4>Subject: <%= @message.subject %></h4>
+<h4>Message: </h4>
+<p><%= @message.body %></p>
+<h4><%= link_to "Reply", user_path(@message.sender_id) %></h4>
+
+

@@ -1,0 +1,7 @@
+
+= simple_form_for [current_user, @message], :action => :create do |f|
+
+  = f.input :recipient_id, label: 'Recipient'
+  = f.input :subject
+  = f.input :body, required: false, label: 'Your message'
+  = f.submit 'Send message'

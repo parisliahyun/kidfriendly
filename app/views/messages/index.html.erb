@@ -1,0 +1,24 @@
+
+<%= render :partial=>"messages_menu" %>
+<% if @messages.count < 0 %>
+<label>Inbox is empty</label>
+<% else %>
+  <table class="table table-hover table-bordered">
+    <thead>
+      <th>From</th>
+      <th>Subject</th>
+      <th>Sent</th>
+    </thead>
+    <tbody>
+    <% @messages.each do |message| %>
+      <% @sender = User.find_by(id: [message.sender_id.to_i]) %>
+      <tr>
+        <td><%= link_to @sender.name, user_path(message.sender_id) %></td>
+        <td><%= link_to message.subject, user_message_path(current_user, message) %></td>
+        <td><%= message.transform_date %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>
+
