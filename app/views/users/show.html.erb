@@ -1,4 +1,4 @@
-<h2><%= "#{@user.username}" %></h2>
+<h2><%= "#{@user.name}" %></h2>
 <button type="button" class="btn btn-primary btn-medium" data-toggle="modal" data-target="#myModal">
   <span class="glyphicon glyphicon-envelope"></span> Message
 </button>
@@ -9,7 +9,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel", style="font-size:20px; font-family: oxygen !important; font-weight: 900 !important;"><%= "To: #{@user.username}" %></h4></br>
+          <h4 class="modal-title" id="myModalLabel", style="font-size:20px; font-family: oxygen !important; font-weight: 900 !important;"><%= "To: #{@user.name}" %></h4></br>
         <%= form_for [@user, Message.new], :action => :create, :hmtl => {:class => 'form',:role=> 'form'} do |f| %>
           <h4 class="modal-title" id="myModalLabel", style="font-size:20px; font-family: oxygen !important; font-weight: normal !important">
               <%= f.label :subject, "Subject: " %>
@@ -36,6 +36,6 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-
+<!-- Rating : rating_for @user %> -->
 
 
