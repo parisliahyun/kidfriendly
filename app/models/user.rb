@@ -5,6 +5,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :received_activities,
+  :class_name => 'Activity',
+  :primary_key => 'user_id',
+  :foreign_key => 'vendor_id'       
+
   has_many :received_messages,
   :class_name => 'Message',
   :primary_key => 'user_id',
