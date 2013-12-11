@@ -24,8 +24,11 @@
 
       <div class="radio">
       <label>
-         <%= "I want to be an activity provider" %> 
-        <%= radio_button("user", "role", "vendor") %>
+        <%= radio_button("user", "role", "none") %> 
+        <%= "Let me search for activities." %></br> 
+        <%= radio_button("user", "role", "vendor") %> 
+        <%= "I want to be an activity provider." %>
+
       </label>
      </div>
 

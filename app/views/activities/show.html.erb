@@ -6,12 +6,12 @@
     <li>Tags: <%= @activity.tags %></li>
     <li>Price: $<%= @activity.price %>0</li>
     <% if @activity.requester_id == nil %> 
-    <%= button_to "confirm", confirm_activity_path, :id => @activity.id, :method => :put %>
+    <%= button_to "confirm", confirm_user_activity_path, :id => @activity.id, :method => :put %>
 
     <% end %> 
 
     <% if @activity.requester_id != current_user.id && @activity.requester_id != nil %> 
-    <%= button_to "claim", claim_activity_path, :id => @activity.id, :method => :put %>
+    <%= button_to "claim", claim_user_activity_path, :id => @activity.id, :method => :put %>
       <% end %> 
 
   </ul>

@@ -1,9 +1,9 @@
-<h6>Schedule an exchange:</h6>
+<h6>Create an activity:</h6>
 
  <div class="well">
 
 <div class="panel-body">
-  <%= form_for [@current_user, @activity], :action => :create, :html => {:class => 'form',:role => 'form'} do |f| %>
+  <%= form_for [current_user, @activity], :action => :create, :html => {:class => 'form',:role => 'form'} do |f| %>
 
  
   <div class="form group">

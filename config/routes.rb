@@ -1,14 +1,5 @@
 KidFriendly::Application.routes.draw do
   root "welcome#index"
-  resources :activities  do
-    member do
-      put 'claim'
-      put 'confirm'
-    end
-  end
-
-
-
   devise_for :users  
     get "profile" => "devise/registrations#update", :as => :profile_user_registration 
   # , :controllers => { registrations: 'users/registrations' }
@@ -23,5 +14,11 @@ KidFriendly::Application.routes.draw do
         post :empty_trash
       end
     end
-   end   
+    resources :activities  do
+      member do
+        put 'claim'
+        put 'confirm'
+      end
+    end
+  end 
 end

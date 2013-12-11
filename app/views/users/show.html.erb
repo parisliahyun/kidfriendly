@@ -9,12 +9,16 @@
   <li>Name: <%= @user.name %></li>
   <li>About: <%= @user.about %></li>
   <li>Interests: <%= @user.interests %></li>
-  <% if @user.role == "vendor" %>
+<% if @user.role == "vendor" %>
   <li>Role: <%= @user.role %></li>
   <li>Skills: <%= @user.skills %></li>
-  <% end %>
+<% end %>
 </ul>
 </div>
+
+<% if @user.role == "vendor" %>
+  <h2><%= link_to "Create a new activity", new_user_activity_path(current_user) %></h2>
+<% end %>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
