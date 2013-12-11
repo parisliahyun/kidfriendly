@@ -22,6 +22,20 @@
         <%= f.password_field :password, class: "form-control" %>
       </div>
 
+      <div class="radio">
+      <label>
+         <%= "I want to be an activity provider" %> 
+        <%= radio_button("user", "role", "vendor") %>
+         <!-- <input type="radio" class="input_radio" name= "role" value= <%= resource.role = "vendor" %>> -->
+           <!-- choice = params["role"] %> -->
+           <!-- if choice == "vendor" %> -->
+           <!-- resource.role = "vendor" %> -->
+           <!-- resource.save! %> -->
+         <!-- end %> -->
+
+      </label>
+     </div>
+
       <div class="form-group">
         <%= f.submit "Sign up", class: "btn btn-primary" %>
       </div>

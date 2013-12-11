@@ -1,6 +1,4 @@
 class MessagesController < ApplicationController
- before_filter :set_user
- # :authenticate_user!
  
 def new
   @message = Message.new
@@ -22,6 +20,7 @@ def create
   else
     render :action => :new
   end
+
 end
 
 def sent
@@ -50,9 +49,5 @@ end
 
    def message_params
       params.require(:message).permit(:recipient_id, :subject, :body)
-   end
-
-   def set_user
-    @user = current_user
    end
 end

@@ -10,6 +10,7 @@ KidFriendly::Application.routes.draw do
 
 
   devise_for :users
+  # , :controllers => { registrations: 'users/registrations' }
   resources :users, only: :show do
     post :generate_new_password_email
     resources :messages do
