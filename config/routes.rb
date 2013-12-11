@@ -9,7 +9,8 @@ KidFriendly::Application.routes.draw do
 
 
 
-  devise_for :users
+  devise_for :users  
+    get "profile" => "devise/registrations#update", :as => :profile_user_registration 
   # , :controllers => { registrations: 'users/registrations' }
   resources :users, only: :show do
     post :generate_new_password_email

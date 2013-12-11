@@ -2,6 +2,19 @@
 <button type="button" class="btn btn-primary btn-medium" data-toggle="modal" data-target="#myModal">
   <span class="glyphicon glyphicon-envelope"></span> Message
 </button>
+</br>
+</br>
+<div class="well">
+<ul>
+  <li>Name: <%= @user.name %></li>
+  <li>About: <%= @user.about %></li>
+  <li>Interests: <%= @user.interests %></li>
+  <% if @user.role == "vendor" %>
+  <li>Role: <%= @user.role %></li>
+  <li>Skills: <%= @user.skills %></li>
+  <% end %>
+</ul>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
