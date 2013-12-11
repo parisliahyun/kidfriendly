@@ -20,19 +20,19 @@
 
       <div class="form-group">
        <%= f.label :about, "about" %>
-       <%= f.text_field :about, class: "form-control", :autofocus => true %>
+       <%= f.text_area :about, class: "form-control", :autofocus => true %>
       </div>
 
       <div class="form-group">
        <%= f.label :interests, "interests" %>
-       <%= f.text_field :interests, class: "form-control", :autofocus => true %>
+       <%= f.text_area :interests, class: "form-control", :autofocus => true %>
       </div>
 
       <% if @user.role == "vendor" %>
 
       <div class="form-group">
        <%= f.label :skills, "skills" %>
-       <%= f.text_field :skills, class: "form-control", :autofocus => true %>
+       <%= f.text_area :skills, class: "form-control", :autofocus => true %>
       </div>
 
       <% end %>
