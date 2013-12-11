@@ -3,17 +3,17 @@
   
   <% @activities.each do |activity| %>
   <ul>
-  <% @requester = User.find_by(id: [activity.requester_id.to_i]) %>
+  <!-- @requester = User.find_by(id: [activity.requester_id.to_i]) %> -->
   <% if activity.vendor_id == nil %>
-    <li>Requester: <%= activity.requester_id %></li>
-    <li>Requester name: <%= @requester.name %> </li>
+    <!-- <li>Requester: <%= activity.requester_id %></li> -->
+    <!-- <li>Requester name:  @requester.name %> </li> -->
     <li>Image Url: <%= activity.image_url %></li>
     <li>Description: <%= activity.description %></li>
     <li>Tags: <%= activity.tags %></li>
     <li>Price: $<%= activity.price %>0</li>
-    <% unless activity.requester_id == nil %>
-    <%= button_to "select", activity_path(activity), :method => :get %>
-    <% end %>   
+<!--     unless activity.requester_id == nil %>
+     button_to "select", activity_path(activity), :method => :get %> -->
+     <!-- end %>    -->
   </ul>
   <% end %>
   <% end %>
