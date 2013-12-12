@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   letsrate_rater
-  letsrate_rateable       
+  letsrate_rateable    
+  has_many :comments, as: :commentable   
 
   has_many :received_activities,
   :class_name => 'Activity',

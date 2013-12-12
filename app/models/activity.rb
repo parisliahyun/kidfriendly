@@ -9,6 +9,7 @@ class Activity < ActiveRecord::Base
     :foreign_key => 'vendor_id'   
 
   letsrate_rateable    
+  has_many :comments, as: :commentable
 
   def transform_date
     d = Date.parse(self.date.to_s)
