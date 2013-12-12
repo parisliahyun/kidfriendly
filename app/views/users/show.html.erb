@@ -5,7 +5,7 @@
 </br>
 </br>
 <button type="button" class="btn btn-primary btn-medium" form class='button_to' method='get' action='<%= link_to user_calendar_path(current_user) %>'>
-  <span class="glyphicon glyphicon-envelope"></span> Calendar
+  <span class="glyphicon glyphicon-calendar"></span> Calendar
 </button>
 </br>
 </br>
@@ -59,6 +59,6 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-<!-- Rating : rating_for @user %> -->
+Rating : <%= rating_for @user %>
 
 

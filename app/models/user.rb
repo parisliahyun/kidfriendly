@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  letsrate_rater
+  letsrate_rateable       
+
   has_many :received_activities,
   :class_name => 'Activity',
   :primary_key => 'user_id',

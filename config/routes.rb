@@ -1,4 +1,5 @@
 KidFriendly::Application.routes.draw do
+  get '/rate' => 'rater#create', :as => 'rate'
   root "welcome#index"
   
 
