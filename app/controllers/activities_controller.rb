@@ -15,7 +15,7 @@ class ActivitiesController < ApplicationController
     @activities = Activity.all
     @activity = Activity.new(activity_params)  
     if @activity.save  
-      redirect_to user_activity_path(@activity.id)
+      redirect_to calendar_path
     else
       render :new  
     end
@@ -59,7 +59,7 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-      params.require(:activity).permit(:image_url, :description, :tags, :price)
+      params.require(:activity).permit(:scheduled_at, :image_url, :description, :tags, :price)
   end
 
 end

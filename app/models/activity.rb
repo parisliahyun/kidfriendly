@@ -13,19 +13,18 @@ class Activity < ActiveRecord::Base
     return "#{Date::MONTHNAMES[d.mon]} #{d.mday}, #{d.year}"
   end
 
-  # def transform_time
-  #   d = Date.parse(self.time.to_s)
-  #   return "#{Date::MONTHNAMES[d.day]} #{d.dhr}, #{d.dmin}"
-  # end
-
-  # def set_vendor(exchange, id)
-  #   self.vendor_id = current_user.id
-  # end
-
-  # def set_requester(exchange, id)
-  #   @exchange = Exchange.find_by_id(params[:id])
-  #   @exchange.requester_id = current_user.id
-  #   @exchange.save!
-  # end
-
+  def date
+    self.scheduled_at
+  end
+  
+  def self.all_by_date
+    all_by_date = {}
+    all_activities = Activity.order("scheduled_at")
+    all_activities.each do |e|
+      date_string = e.date.to_s
+      all_by_date[date_string] = [] if all_by_date[date_string].nil?
+      all_by_date[e.date.to_s] << e
+    end  
+      all_by_date
+  end
 end

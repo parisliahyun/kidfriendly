@@ -1,5 +1,7 @@
 KidFriendly::Application.routes.draw do
   root "welcome#index"
+  get "calendar" => "calendar#show", :as => "calendar"
+
   devise_for :users  
     get "profile" => "devise/registrations#update", :as => :profile_user_registration 
   # , :controllers => { registrations: 'users/registrations' }
