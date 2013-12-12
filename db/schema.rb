@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 20131212210911439) do
     t.datetime "scheduled_at"
   end
 
+  create_table "comments", force: true do |t|
+    t.text     "content"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
+
   create_table "messages", force: true do |t|
     t.string   "sender_id",                           null: false
     t.string   "recipient_id"
