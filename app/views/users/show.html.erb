@@ -4,6 +4,11 @@
 </button>
 </br>
 </br>
+<button type="button" class="btn btn-primary btn-medium" form class='button_to' method='get' action='<%= link_to user_calendar_path(current_user) %>'>
+  <span class="glyphicon glyphicon-envelope"></span> Calendar
+</button>
+</br>
+</br>
 <div class="well">
 <ul>
   <li>Name: <%= @user.name %></li>
@@ -16,7 +21,7 @@
 </ul>
 </div>
 
-<% if @user.role == "vendor" %>
+<% if @user.role == "vendor" && @user == current_user %>
   <h2><%= link_to "Create a new activity", new_user_activity_path(current_user) %></h2>
 
 <% end %>
