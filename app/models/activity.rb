@@ -8,6 +8,8 @@ class Activity < ActiveRecord::Base
     :primary_key => 'user_id',
     :foreign_key => 'vendor_id'   
 
+  letsrate_rateable    
+
   def transform_date
     d = Date.parse(self.date.to_s)
     return "#{Date::MONTHNAMES[d.mon]} #{d.mday}, #{d.year}"

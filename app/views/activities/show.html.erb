@@ -13,6 +13,6 @@
     <% if @activity.requester_id != current_user.id && @activity.requester_id != nil %> 
     <%= button_to "claim", claim_user_activity_path, :id => @activity.id, :method => :put %>
       <% end %> 
-
   </ul>
+  Rating : <%= rating_for @activity %>
 </div>
