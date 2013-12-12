@@ -5,9 +5,10 @@
     <li>Description: <%= @activity.description %></li>
     <li>Tags: <%= @activity.tags %></li>
     <li>Price: $<%= @activity.price %>0</li>
-    <% if @activity.requester_id == nil %> 
-    <%= button_to "confirm", confirm_user_activity_path, :id => @activity.id, :method => :put %>
-    <% end %> 
   </ul>
   Rating : <%= rating_for @activity %>
+  <h2>Comments</h2>
+
+  <%= render "comments/comments" %>
+  <%= render "comments/form" %>
 </div>

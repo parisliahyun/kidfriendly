@@ -6,8 +6,6 @@ KidFriendly::Application.routes.draw do
   
 
   devise_for :users  
-    # get "profile" => "devise/registrations#update", :as => :profile_user_registration 
-  # , :controllers => { registrations: 'users/registrations' }
   resources :users, only: :show do
     resources :comments
     get "calendar" => "calendar#show", :as => "calendar"
@@ -21,7 +19,7 @@ KidFriendly::Application.routes.draw do
         post :empty_trash
       end
     end
-    resources :activities  do
+    resources :activities, :shallow=>true   do
       resources :comments
       member do
         put 'claim'

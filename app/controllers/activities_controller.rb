@@ -15,7 +15,7 @@ class ActivitiesController < ApplicationController
     @activities = Activity.all
     @activity = Activity.new(activity_params)  
     if @activity.save  
-      redirect_to calendar_path
+      redirect_to activity_path(@activity.id)
     else
       render :new  
     end
@@ -23,6 +23,9 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
+    @commentable = @activity
+    @comments = @commentable.comments
+    @comment = Comment.new
     render :show
   end
 
