@@ -1,0 +1,46 @@
+<h6>Create a schedule:</h6>
+
+ <div class="well">
+
+<div class="panel-body">
+  <%= form_for [current_user, @schedule], :action => :create, :html => {:class => 'form',:role => 'form'} do |f| %>
+
+ 
+  <div class="form group">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  
+  <div class="form group">
+    <%= f.label :from_date, "from date" %></br> 
+    <%= f.date_field :from_date %></br>
+  </div>  
+
+  <div class="form group">
+    <%= f.label :from_time, "start time" %></br> 
+    <%= f.time_field :from_time %></br> 
+  </div> 
+
+  <div class="form group">
+    <%= f.label :to_time, "end time" %></br> 
+    <%= f.time_field :to_time %></br> 
+  </div> 
+
+  <div class="form group">
+    <%= f.label :to_date, "end date" %></br> 
+    <%= f.date_field :to_date %></br> 
+  </div>
+
+  <div class="form group">
+    <%= f.label :repeats_every_n_weeks, "Repeats again in how many weeks? Enter the number." %></br> 
+    <%= f.number_field :repeats_every_n_weeks %></br> 
+  </div>
+
+   <br>
+   <br>
+  <%= f.submit nil, class: "btn btn-primary" %>
+   <% end %> 
+
+</div>
+</div>
+

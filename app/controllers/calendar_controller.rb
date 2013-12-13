@@ -3,3 +3,4 @@ class CalendarController < ApplicationController
      @activities_by_date = Activity.all_by_date
   end
 end
+

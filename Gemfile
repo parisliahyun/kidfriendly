@@ -17,6 +17,7 @@ gem 'haml','~>4.0.4'
 gem 'simple_form'
 gem 'twitter-bootstrap-calendar'
 gem "letsrate", "~> 1.0.8"
+gem 'ice_cube'
 
 group :doc do
   gem 'sdoc', require: false

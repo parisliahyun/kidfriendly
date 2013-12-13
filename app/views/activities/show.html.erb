@@ -5,7 +5,11 @@
     <li>Description: <%= @activity.description %></li>
     <li>Tags: <%= @activity.tags %></li>
     <li>Price: $<%= @activity.price %>0</li>
+<<<<<<< HEAD
     <li>This activity is taught by: <%= @vendor.name %></li>
+=======
+    <li><%= link_to "View available dates", user_schedules_path(@activity.vendor_id)%></li>
+>>>>>>> schedule
   </ul>
   Rating : <%= rating_for @activity %>
   <h2>Comments</h2>
