@@ -4,9 +4,9 @@ KidFriendly::Application.routes.draw do
   get '/rate' => 'rater#create', :as => 'rate'
   root "welcome#index"
   
-
   devise_for :users  
   resources :users, only: :show do
+    resources :schedules
     resources :comments
     get "calendar" => "calendar#show", :as => "calendar"
     post :generate_new_password_email

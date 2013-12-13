@@ -26,6 +26,29 @@ ActiveRecord::Schema.define(version: 20131212210911439) do
     t.integer  "requester_id"
     t.integer  "vendor_id"
     t.datetime "scheduled_at"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "appointments", force: true do |t|
+    t.integer  "vendor_id"
+    t.integer  "client_id"
+    t.integer  "activity_id"
+    t.datetime "date"
+    t.time     "start"
+    t.time     "finish"
+    t.decimal  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "calendars", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "color"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "comments", force: true do |t|
@@ -75,6 +98,36 @@ ActiveRecord::Schema.define(version: 20131212210911439) do
   end
 
   add_index "rating_caches", ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type", using: :btree
+
+  create_table "schedules", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.boolean  "is_all_day"
+    t.date     "from_date"
+    t.time     "from_time"
+    t.date     "to_date"
+    t.time     "to_time"
+    t.string   "repeats"
+    t.integer  "repeats_every_n_days"
+    t.integer  "repeats_every_n_weeks"
+    t.integer  "repeats_weekly_each_days_of_the_week_mask"
+    t.integer  "repeats_every_n_months"
+    t.string   "repeats_monthly"
+    t.integer  "repeats_monthly_each_days_of_the_month_mask"
+    t.integer  "repeats_monthly_on_ordinals_mask"
+    t.integer  "repeats_monthly_on_days_of_the_week_mask"
+    t.integer  "repeats_every_n_years"
+    t.integer  "repeats_yearly_each_months_of_the_year_mask"
+    t.boolean  "repeats_yearly_on"
+    t.integer  "repeats_yearly_on_ordinals_mask"
+    t.integer  "repeats_yearly_on_days_of_the_week_mask"
+    t.string   "repeat_ends"
+    t.date     "repeat_ends_on"
+    t.string   "time_zone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "calendar_id"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

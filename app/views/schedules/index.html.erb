@@ -1,0 +1,10 @@
+<% @schedules.each do |schedule| %>
+<ul>
+  <li>Name: <%= schedule.name %></li>
+  <li> From date:<%= schedule.from_date %></li>
+  <li>End date: <%= schedule.to_date %></li>
+  <li>Start time: <%= schedule.from_time %></li>
+  <li>End time: <%= schedule.to_time %></li>
+  <li>Repeats<%= schedule.repeats_every_n_weeks %> time every week.</li>
+</ul>
+<% end %>
