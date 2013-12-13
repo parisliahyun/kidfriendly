@@ -1,0 +1,46 @@
+<h6>Create an activity:</h6>
+
+ <div class="well">
+
+<div class="panel-body">
+  <%= form_for [current_user, @appointment], :action => :create, :html => {:class => 'form',:role => 'form'} do |f| %>
+  
+  <div class="form group">
+    <%= f.label :activity_id %></br> 
+    <%= f.text_field :activity_id %></br>
+  </div>  
+
+  <div class="form group">
+    <%= f.label :date %></br> 
+    <%= f.date_field :date %></br> 
+  </div> 
+
+  <div class="form group">
+    <%= f.label :start %></br> 
+    <%= f.time_field :start %></br> 
+  </div> 
+
+  <div class="form group">
+    <%= f.label :finish %></br> 
+    <%= f.time_field :finish %></br> 
+  </div> 
+
+  <div class="form group">
+    <%= f.label :price %></br> 
+    <%= f.number_field :price %></br> 
+  </div> 
+  
+<!-- 
+  <div class="form group">
+    f.label :date %></br> 
+    f.date_field :scheduled_at %></br> 
+  </div> -->
+
+   <br>
+   <br>
+  <%= f.submit nil, class: "btn btn-primary" %>
+   <% end %> 
+
+</div>
+</div>
+

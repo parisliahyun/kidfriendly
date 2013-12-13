@@ -26,6 +26,7 @@ class ActivitiesController < ApplicationController
     @commentable = @activity
     @comments = @commentable.comments
     @comment = Comment.new
+    @vendor = User.find_by(id: [@activity.vendor_id.to_i])
     render :show
   end
 

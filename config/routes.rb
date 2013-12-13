@@ -2,6 +2,7 @@ KidFriendly::Application.routes.draw do
   get "comments/index"
   get "comments/new"
   get '/rate' => 'rater#create', :as => 'rate'
+  resources :appointments
   root "welcome#index"
   
 

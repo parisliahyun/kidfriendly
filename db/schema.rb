@@ -26,6 +26,21 @@ ActiveRecord::Schema.define(version: 20131212210911439) do
     t.integer  "requester_id"
     t.integer  "vendor_id"
     t.datetime "scheduled_at"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "appointments", force: true do |t|
+    t.integer  "vendor_id"
+    t.integer  "client_id"
+    t.integer  "activity_id"
+    t.datetime "date"
+    t.time     "start"
+    t.time     "finish"
+    t.decimal  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "comments", force: true do |t|
@@ -75,6 +90,9 @@ ActiveRecord::Schema.define(version: 20131212210911439) do
   end
 
   add_index "rating_caches", ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type", using: :btree
+
+  create_table "schedules", force: true do |t|
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

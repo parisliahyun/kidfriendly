@@ -17,14 +17,27 @@
 <% if @user.role == "vendor" %>
   <li>Role: <%= @user.role %></li>
   <li>Skills: <%= @user.skills %></li>
+  <li>Activities I teach: </li>
+  <% @activities.each do  |activity| %>
+  <li>Activity Description: <%= activity.description %></li>
+<% end %>    
 <% end %>
 </ul>
 </div>
 
+<!-- ######################### VENDOR INFORMATION #################### -->
 <% if @user.role == "vendor" && @user == current_user %>
-  <h2><%= link_to "Create a new activity", new_user_activity_path(current_user) %></h2>
-
+<%= render "users/vendor" %> 
 <% end %>
+
+<!-- ######################### END #################### -->
+
+<!-- ######################### CLIENT INFORMATION #################### -->
+<% if @user.role == "client" && @user == current_user %>
+<%= render "users/client" %> 
+<% end %>
+
+<!-- ######################### END #################### -->
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

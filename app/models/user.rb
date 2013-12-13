@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   letsrate_rater
   letsrate_rateable    
+  has_many :appointments
   has_many :comments, as: :commentable   
 
   has_many :received_activities,

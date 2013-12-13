@@ -1,0 +1,9 @@
+<% if @user.role == "vendor" && @user == current_user %>
+  <h2><%= link_to "Create a new activity", new_user_activity_path(current_user) %></h2>
+
+<!-- list owned activities
+current appointment 
+past clients -->
+
+<% end %>
+

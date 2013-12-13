@@ -11,15 +11,15 @@ class UsersController < ApplicationController
     @commentable = @user
     @comments = @commentable.comments
     @comment = Comment.new
+    @activities = Activity.where(vendor_id: [current_user.id])
+
+    # display history of booked activities:
+    # @appointments = Appointment.where(vendor_id: [current_user.id])
+    # loop through appointments and:
+    # <% @client = User.find_by(id: [appointment.client_id.to_i]) %>
+    # @client.name
     render :show
   end
-
-  # def generate_new_password_email
-  #     user = User.find(params[:user_id])
-  #     user.send_reset_password_instructions
-  #     flash[:notice] = "Reset password instructions have been sent to #{user.email}."
-  #     redirect_to admin_user_path(user)
-  # end
 
   private
 
