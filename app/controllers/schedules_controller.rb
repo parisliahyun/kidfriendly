@@ -8,7 +8,7 @@ class SchedulesController < ApplicationController
   def create
     @schedule = Schedule.new(schedule_params)
     if @schedule.save  
-      redirect_to user_schedule_path(@schedule.id)
+      redirect_to user_schedules_path
     else
       render :new  
     end
@@ -16,14 +16,13 @@ class SchedulesController < ApplicationController
 
   def index
     @schedules = Schedule.all
-
     render :index
   end
 
   private
 
   def schedule_params
-    params.require(:schedule).permit(:name, :from_date, :from_time, :to_date, :to_time, :repeats_every_n_weeks)
+    params.require(:schedule).permit(:user_id, :name, :from_date, :from_time, :to_date, :to_time, :repeats_every_n_weeks)
   end
 
 end

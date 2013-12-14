@@ -1,8 +1,4 @@
 class Schedule < ActiveRecord::Base
-<<<<<<< HEAD
+  belongs_to :user  
 end
-=======
-  belongs_to :user
-  
-end
->>>>>>> schedule
+
