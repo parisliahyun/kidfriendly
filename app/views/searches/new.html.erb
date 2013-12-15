@@ -1,0 +1,8 @@
+<div class="container">
+  <%= render 'form' %>
+  <ul>
+    <% @activities.each do |activity| %>
+    <li><img src="<%= activity.image_url %>" alt="activity image" height="300px" width="350px"></li>
+  </ul>
+  <% end %>
+</div>

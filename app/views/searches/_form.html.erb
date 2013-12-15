@@ -1,0 +1,12 @@
+ <div class="well">
+  <h2>search for an activity</h2>
+  <div class="form">
+
+    <%= form_tag searches_path, :method => :get do %>  
+    <%= select_tag "activities", options_from_collection_for_select(@activities, "id", "tags") %> 
+    <%= date_field(@schedules, "from_date") %> 
+    <%= submit_tag "Go", :class => 'go' %>   
+    <% end %>  
+  </div> 
+
+</div>

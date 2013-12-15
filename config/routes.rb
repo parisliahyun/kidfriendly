@@ -2,7 +2,8 @@ KidFriendly::Application.routes.draw do
   get "comments/index"
   get "comments/new"
   get '/rate' => 'rater#create', :as => 'rate'
-  resources :appointments
+  resources :appointments 
+  resources :searches, only: [:new, :create, :index]
   root "welcome#index"
   
   devise_for :users  
