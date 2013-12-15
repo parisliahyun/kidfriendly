@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/svenfuchs/i18n.git
+  revision: 8fc94e7e9ec20396e974b0549cf499662238bf56
+  specs:
+    i18n (0.6.9)
+
+GIT
   remote: git://github.com/thomas-mcdonald/bootstrap-sass.git
   revision: 9c6c07f74ff515cf38380b014cfede14a4f0eae4
   branch: 3
@@ -59,7 +65,6 @@ GEM
     haml (4.0.4)
       tilt
     hike (1.2.3)
-    i18n (0.6.9)
     ice_cube (0.11.1)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
@@ -171,6 +176,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise (~> 3.1.1)
   haml (~> 4.0.4)
+  i18n!
   ice_cube
   jbuilder (~> 1.2)
   jquery-rails

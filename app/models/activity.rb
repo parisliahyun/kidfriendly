@@ -32,6 +32,13 @@ class Activity < ActiveRecord::Base
     all_by_date
   end
 
+  def tagged
+  #   if params[:tag].present? 
+  #     @activities = Activity.tagged_with(params[:tag])
+  #   end  
+  #   @activities = Activity.tagged_with(params[:tag])
+  end
+
 end
 
 

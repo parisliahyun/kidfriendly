@@ -1,12 +1,17 @@
- <div class="well">
-  <h2>search for an activity</h2>
-  <div class="form">
+ <div class="search-well">
+  
+  <div class="search-form">
+    <h2>search for an activity</h2>
 
     <%= form_tag searches_path, :method => :get do %>  
-    <%= select_tag "activities", options_from_collection_for_select(@activities, "id", "tags") %> 
-    <%= date_field(@schedules, "from_date") %> 
+    <!-- select_tag "activities", collection_select(@activities, "id", "tag_list"), {:multiple => true} %>  -->
+    <%= date_select :schedule, :from_date %>
+   <!-- date_field :from_date, params[:from_date] %>  -->
+    <%= collection_select(:activity, :id, Activity.all, :id, :tag_list, prompt: true, :multiple => true)  %>
+    
     <%= submit_tag "Go", :class => 'go' %>   
     <% end %>  
   </div> 
+
 
 </div>

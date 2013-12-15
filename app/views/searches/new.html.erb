@@ -1,8 +1,11 @@
 <div class="container">
+
   <%= render 'form' %>
-  <ul>
-    <% @activities.each do |activity| %>
-    <li><img src="<%= activity.image_url %>" alt="activity image" height="300px" width="350px"></li>
-  </ul>
+ 
+
+  <div class="row">
+  <% @activities.each do |activity| %>
+  <div class="col-md-4"><img class="activities" src="<%= activity.image_url %>" alt="activity image" height="280px" width="355px"></div>
   <% end %>
+  </div>  
 </div>

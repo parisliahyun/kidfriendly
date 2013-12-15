@@ -13,11 +13,11 @@
 <ul>
   <li>Name: <%= @user.name %></li>
   <li>About: <%= @user.about %></li>
-  <li>Interests: <%= @user.interests %></li>
 <% if @user.role == "vendor" %>
   <li>Role: <%= @user.role %></li>
-  <li>Skills: <%= @user.skills %></li>
+  <li>Skills: <%= @user.tag_list %></li>
   <li><%= link_to "Activities I teach", user_activities_path(@user.id)  %></li>
+  <li><%= link_to "My availability", user_schedules_path(@user.id)  %></li>
   <% @activities.each do  |activity| %>
   <li>Activity Description: <%= activity.description %></li>
 <% end %>    
