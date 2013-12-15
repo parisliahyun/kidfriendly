@@ -1,13 +1,14 @@
 class Activity < ActiveRecord::Base
-  belongs_to :requester,
-  :class_name => 'User',
-  :primary_key => 'user_id',
-  :foreign_key => 'vendor_id'
-  belongs_to :vendor,
-  :class_name => 'User',
-  :primary_key => 'user_id',
-  :foreign_key => 'vendor_id'   
-
+  belongs_to :user
+  # belongs_to :requester,
+  # :class_name => 'User',
+  # :primary_key => 'user_id',
+  # :foreign_key => 'vendor_id'
+  # belongs_to :vendor,
+  # :class_name => 'User',
+  # :primary_key => 'user_id',
+  # :foreign_key => 'vendor_id'   
+  acts_as_taggable
   letsrate_rateable    
   has_many :comments, as: :commentable
 
@@ -30,4 +31,8 @@ class Activity < ActiveRecord::Base
     end  
     all_by_date
   end
+
 end
+
+
+

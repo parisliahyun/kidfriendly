@@ -5,9 +5,6 @@ class ActivitiesController < ApplicationController
     render :new
   end
 
-  def update
-  end
-
   def create
     @activities = Activity.all
     @activity = Activity.new(activity_params)  
@@ -17,6 +14,11 @@ class ActivitiesController < ApplicationController
     else
       render :new  
     end
+  end
+
+  def edit
+     @activity = Activity.find(params[:id])
+    render :edit
   end
 
   def show
@@ -33,6 +35,15 @@ class ActivitiesController < ApplicationController
     render :index
   end
 
+   def update
+     @activity = Activity.find(params[:id])
+    if @activity.update_attributes(activity_params)
+      redirect_to activity_path(@activity.id)
+    else
+      render :edit
+    end
+  end 
+
   def destroy
    @activity = Activity.find(params[:id])
     if @activity.destroy
@@ -45,7 +56,7 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-      params.require(:activity).permit(:scheduled_at, :image_url, :description, :tags, :price, :vendor_id)
+      params.require(:activity).permit(:scheduled_at, :image_url, :description, :tag_list, :price, :vendor_id)
   end
 
 end

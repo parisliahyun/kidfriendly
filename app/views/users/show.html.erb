@@ -17,7 +17,7 @@
 <% if @user.role == "vendor" %>
   <li>Role: <%= @user.role %></li>
   <li>Skills: <%= @user.skills %></li>
-  <li>Activities I teach: </li>
+  <li><%= link_to "Activities I teach", user_activities_path(@user.id)  %></li>
   <% @activities.each do  |activity| %>
   <li>Activity Description: <%= activity.description %></li>
 <% end %>    

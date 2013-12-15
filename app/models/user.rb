@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :appointments
   has_many :comments, as: :commentable   
   has_many :schedules
+  has_many :activities
 
   has_many :received_activities,
   :class_name => 'Activity',

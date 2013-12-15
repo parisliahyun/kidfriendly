@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'twitter-bootstrap-calendar'
 gem "letsrate", "~> 1.0.8"
 gem 'ice_cube'
+gem 'acts-as-taggable-on'
 
 group :doc do
   gem 'sdoc', require: false
