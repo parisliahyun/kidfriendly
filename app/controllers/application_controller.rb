@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << [:image_url, :name, :role]
     devise_parameter_sanitizer.for(:account_update) << [:name, :image_url, :role, :skills, :interests, :about] 
   end
+
+  def after_sign_in_path_for(resource)
+    new_search_path
+  end
 end
 
 

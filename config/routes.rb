@@ -6,6 +6,7 @@ KidFriendly::Application.routes.draw do
   resources :searches, only: [:new, :create, :index]
   root "welcome#index"
   
+  # devise_for :users, :controllers => { :registrations => "users/registrations" }
   devise_for :users  
   resources :users, only: :show do
     resources :schedules
