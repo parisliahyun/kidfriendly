@@ -27,6 +27,6 @@ module KidFriendly
     I18n.enforce_available_locales = false
     
     # config.paths['app/views'] << "app/views/devise"
-    config.assets.initialize_on_precompile = false
+    # config.assets.initialize_on_precompile = false
   end
 end
