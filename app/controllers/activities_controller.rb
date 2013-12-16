@@ -31,6 +31,7 @@ class ActivitiesController < ApplicationController
   end
 
   def index
+    @user = User.find_by(id: params[:user_id])
     @activities = Activity.all
     render :index
   end

@@ -1,16 +1,25 @@
 <div class="well">
-  <h2>All Activities:</h2>
-  
+  <h2><%= @user.name %>'s activities:</h2>
+  <div class="row">
   <% @activities.each do |activity| %>
-  <ul>
-    <li>Image Url: <%= activity.image_url %></li>
-    <li>Description: <%= activity.description %></li>
-    <li>Tags: <%= activity.tags %></li>
-    <li>Price: $<%= activity.price %>0</li>
+  <div class="col-md-4">
+     <a href="<%= activity_path(activity.id) %>" class="thumbnail">
+      <img class="activities" src="<%= activity.image_url %>" alt="activity image" height="280px" width="355px"> 
+    </a>
+    <ul>
+      <li>Description: <%= activity.description %></li>
+      <li>Tags: <%= link_to activity.tag_list, activity_path(activity.id) %></li>
+      <li>Price: $<%= activity.price %></li>
   </ul>
+  </div>
   <% end %>
+  </div>
+  
+
 
 </div>
+
+
 
 
 

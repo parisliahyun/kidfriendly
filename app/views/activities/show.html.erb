@@ -1,16 +1,29 @@
 <div class="well">
-  <h4></h4>
+  <div class="row">
+  <div class="col-md-4">
+     <a href="<%= activity_path(@activity.id) %>" class="thumbnail">
+      <img class="activities" src="<%= @activity.image_url %>" alt="@activity image" height="280px" width="355px"> 
+    </a>
   <ul>
-    <li>Image Url: <%= @activity.image_url %></li>
     <li>Description: <%= @activity.description %></li>
     <li>Tags: <%= @activity.tag_list %></li>
     <li>Price: $<%= @activity.price %>0</li>
-    <li>This activity is taught by: <%= @vendor.name %></li>
+    <li>This activity is taught by: <%= link_to @vendor.name, user_path(@vendor.id) %></li>
     <li><%= link_to "View available dates", user_schedules_path(@activity.vendor_id)%></li>
     <% if current_user.id == @activity.vendor_id %>
     <li><%= link_to "Edit this activity", edit_activity_path(@activity) %></li>
     <% end %>
   </ul>
+  </div>
+  </div>
+
+  <% if current_user.id != @activity.vendor_id %>
+  <button type="button" class="btn btn-primary btn-medium" data-toggle="modal" data-target= #>
+  <span class="glyphicon glyphicon-ok-circle"></span>Book it!
+</button>
+  <% end %>
+  <br>
+  <br>
 
   Rating : <%= rating_for @activity %>
   <h2>Comments</h2>
