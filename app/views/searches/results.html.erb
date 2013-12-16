@@ -1,1 +1,13 @@
-"hi"
+<div class="container">
+<h2>Your Results</h2> 
+  <div class="row">
+  <% @matching_activities.each do |activity| %>
+  <div class="col-md-4">
+     <a href="<%= activity_path(activity.id) %>" class="thumbnail">
+      <img class="activities" src="<%= activity.image_url %>" alt="activity image" height="280px" width="355px">
+      <h7 class="hover-text" style="vertical-align: middle !important"><%= activity.description %></h7>  
+    </a>
+  </div>
+  <% end %>
+  </div>  
+</div>

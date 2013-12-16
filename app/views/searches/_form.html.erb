@@ -4,7 +4,7 @@
     <%= form_tag searches_path, :method => :post do %>  
     <!-- date_select :schedule, :from_date %> -->
     <%= label_tag(:q, "Search for:") %>
-    <%= select_tag (:q), options_from_collection_for_select(Activity.all, :id, :tag_list, prompt: true, :multiple => true)  %>
+    <%= select_tag :id, options_from_collection_for_select(Activity.all, :id, :tag_list, prompt: true, :multiple => true)  %>
     <%= submit_tag "Go", :class => 'go' %>  
      <!-- binding.pry %>  -->
     <% end %>  
