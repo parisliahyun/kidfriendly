@@ -9,8 +9,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'bcrypt-ruby', '~> 3.0.0'
-
-gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: '3'
+gem 'bootstrap-sass', '~> 3.0.3.0'
+# gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: '3'
 gem 'rails_12factor', group: :production
 gem 'devise', '~> 3.1.1'
 gem 'haml','~>4.0.4'

@@ -2,10 +2,26 @@
 
   <%= render 'form' %>
  
-
   <div class="row">
   <% @activities.each do |activity| %>
-  <div class="col-md-4"><img class="activities" src="<%= activity.image_url %>" alt="activity image" height="280px" width="355px"></div>
+  <div class="col-md-4">
+     <a href="<%= activity_path(activity.id) %>" class="thumbnail">
+      <img class="activities" src="<%= activity.image_url %>" alt="activity image" height="280px" width="355px">
+      <p class="hover-text" style="vertical-align: middle !important"><%= activity.description %></p>  
+    </a>
+  </div>
   <% end %>
   </div>  
 </div>
+
+<!-- <img class="activities" src="activity.image_url %>" alt="activity image" height="280px" width="355px"></div> -->
+
+<!-- <div class="row">
+  <div class="col-xs-6 col-md-3">
+    <a href="#" class="thumbnail">
+      <img data-src="holder.js/100%x180" alt="...">
+    </a>
+  </div>
+  ...
+</div> -->
+

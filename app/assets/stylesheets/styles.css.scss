@@ -41,9 +41,9 @@
     color: orange;
 }
 
-h2 {
+h3 {
  font-family: 'Text Me One', sans-serif !important;   
-
+    font-size: 35px;
 }
 
 .search-well {
@@ -69,11 +69,69 @@ h2 {
 
 .activities {
     border-radius: 10%;
+    border: solid gray1px;
+    margin: 0 auto;
+    margin-bottom: 20px !important;
+    height: 270px !important;
+    width: 355px !important;
+}
+
+.navbar-brand {
+    font-family: 'Text Me One', sans-serif !important;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: orange !important;
+}
+
+.thumbnail {
+    border-radius: 10%;
     border: solid gray 1px;
     margin: 0 auto;
     margin-bottom: 20px !important;
+    height: 280px !important;
+    width: 355px !important;
+
 }
 
-.row {
-
+.thumbnail:hover .hover-text {
+    visibility: visible;
+    background-color: green;
+    opacity: .8;
+    border-radius: 10%;
+    border: solid gray 1px;
+    margin: 0 auto;
+    margin-bottom: 20px !important;
+    height: 280px !important;
+    width: 355px !important;
 }
+
+.img.activities {
+    border-radius: 10%;
+    margin: 0 auto;
+    margin-bottom: 20px !important;  
+    height: 280px !important;
+    width: 355px !important;
+}
+
+.hover-text {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(29, 106, 154, 0.72);
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+}
+
+p {
+    font-family: 'Text Me One', sans-serif !important;
+    font-size: 20px !important;
+    color: white !important;
+    text-align: center;
+    padding-top: 55px !important;
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+}
+
