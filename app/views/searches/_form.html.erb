@@ -1,17 +1,14 @@
-<!--  <div class="search-well">
-  
+ <div class="search-well">
   <div class="search-form">
     <h3>search for an activity</h3>
-
-     form_tag searches_path, :method => :get do %>   -->
-
-  <!--    date_select :schedule, :from_date %>
-
-     collection_select(:activity, :id, Activity.all, :id, :tag_list, prompt: true, :multiple => true)  %>
-    
-     submit_tag "Go", :class => 'go' %>   
-     end %>  
+    <%= form_tag searches_path, :method => :post do %>  
+    <!-- date_select :schedule, :from_date %> -->
+    <%= label_tag(:q, "Search for:") %>
+    <%= select_tag (:q), options_from_collection_for_select(Activity.all, :id, :tag_list, prompt: true, :multiple => true)  %>
+    <%= submit_tag "Go", :class => 'go' %>  
+     <!-- binding.pry %>  -->
+    <% end %>  
   </div> 
+</div>
 
 
-</div> -->
