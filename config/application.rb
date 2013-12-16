@@ -12,7 +12,6 @@ require "sprockets/railtie"
 Bundler.require(:default, Rails.env)
 
 module KidFriendly
-    
   class Application < Rails::Application
 
     # Settings in config/environments/* take precedence over those specified here.
@@ -29,6 +28,6 @@ module KidFriendly
     # I18n.enforce_available_locales = false
     
     # config.paths['app/views'] << "app/views/devise"
-config.assets.initialize_on_precompile = false
+
   end
 end
