@@ -59,7 +59,7 @@ class User < ActiveRecord::Base
   end
 end
 
-  def password_required?
-    super && provider.blank?
-  end
+  # def password_required?
+  #   super && provider.blank?
+  # end
 end
