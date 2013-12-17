@@ -1,6 +1,8 @@
 KidFriendly::Application.routes.draw do
 
   resources :linkedin
+  post '/rate' => 'rater#create', :as => 'rate'
+  # post '/rate' => 'rater#create', :as => 'rate'
   get '/linkedin_profile' => "linkedin#linkedin_profile"
   get '/oauth_account' => "linkedin#oauth_account" 
   post '/oauth_account' => "linkedin#oauth_account" 
@@ -10,7 +12,6 @@ KidFriendly::Application.routes.draw do
   get "comments/index"
   get "comments/new"
   resources :charges
-  get '/rate' => 'rater#create', :as => 'rate'
   resources :appointments 
   resources :searches, only: [:new, :create, :index]
   root "welcome#index"
