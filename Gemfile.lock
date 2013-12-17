@@ -190,6 +190,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   letsrate (~> 1.0.8)
+  omniauth (~> 1.1.4)
   omniauth-linkedin
   pg
   pry-rails
