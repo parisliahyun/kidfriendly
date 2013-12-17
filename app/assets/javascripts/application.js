@@ -15,4 +15,12 @@
 //= require bootstrap
 //= require twitter-bootstrap-calendar
 //= require turbolinks
-//= require_tree .
+//= require underscore
+//= require backbone
+//= require_tree ./backbone
+//= require jquery.raty
+//= require letsrate
+//= require comments
+//= require_self
+
+searchApp.init();
