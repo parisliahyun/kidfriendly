@@ -18,9 +18,9 @@
   </div>
 
   <% if current_user.id != @activity.vendor_id %>
-  <button type="button" class="btn btn-primary btn-medium" data-toggle="modal" data-target= #>
-  <span class="glyphicon glyphicon-ok-circle"></span>Book it!
-</button>
+    <%= link_to new_charge_path, :class => "btn btn-primary btn-medium" do %>
+    <span class="glyphicon glyphicon-ok-circle"></span> Book it!
+    <% end %>
   <% end %>
   <br>
   <br>
@@ -31,3 +31,12 @@
   <%= render "comments/comments" %>
   <%= render "comments/form" %>
 </div>
+
+
+
+
+
+
+
+
+
