@@ -46,6 +46,23 @@ ActiveRecord::Schema.define(version: 20131212210911439) do
     t.datetime "updated_at"
   end
 
+  create_table "basic_profiles", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "maiden_name"
+    t.string   "formatted_name"
+    t.string   "headline"
+    t.string   "location"
+    t.string   "industry"
+    t.string   "summary"
+    t.string   "specialties"
+    t.string   "picture_url"
+    t.string   "public_profile_url"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "calendars", force: true do |t|
     t.string   "name"
     t.text     "description"
@@ -63,6 +80,20 @@ ActiveRecord::Schema.define(version: 20131212210911439) do
   end
 
   add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
+
+  create_table "connections", force: true do |t|
+    t.text     "connections", array: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "linkedin_oauth_settings", force: true do |t|
+    t.string   "atoken"
+    t.string   "asecret"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "messages", force: true do |t|
     t.string   "sender_id",                           null: false

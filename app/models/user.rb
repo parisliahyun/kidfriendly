@@ -2,8 +2,18 @@ class User < ActiveRecord::Base
   validates :name, :email, presence: true
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :omniauthable,
+  devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable
+
+############# linkedin
+
+  has_one :basic_profile
+  has_one :linkedin_oauth_setting
+  # has_many :connections
+
+#############
+
+
   acts_as_taggable
   letsrate_rater
   letsrate_rateable    

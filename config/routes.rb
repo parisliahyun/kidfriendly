@@ -1,4 +1,12 @@
 KidFriendly::Application.routes.draw do
+
+  resources :linkedin
+  get '/linkedin_profile' => "linkedin#linkedin_profile"
+  get '/oauth_account' => "linkedin#oauth_account" 
+  post '/oauth_account' => "linkedin#oauth_account" 
+  get '/linkedin_oauth_url' => 'linkedin#generate_linkedin_oauth_url' 
+  post '/linkedin_oauth_url' => 'linkedin#generate_linkedin_oauth_url' 
+  
   get "comments/index"
   get "comments/new"
   resources :charges
@@ -7,8 +15,8 @@ KidFriendly::Application.routes.draw do
   resources :searches, only: [:new, :create, :index]
   root "welcome#index"
   
-  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "omniauth_callbacks"}
-  # devise_for :users  
+  # devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+  devise_for :users  
   resources :users, only: :show do
     resources :schedules
     resources :comments

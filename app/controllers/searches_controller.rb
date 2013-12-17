@@ -7,6 +7,7 @@ class SearchesController < ApplicationController
 
   def create
     @activities = Activity.all
+    @activity = Activity.find(params[:id])
     @matching_activities = Activity.where(id: params[:id])
     render :results
       # render "no activities are available for this time."

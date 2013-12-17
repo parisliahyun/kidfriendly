@@ -69,6 +69,10 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.1)
     letsrate (1.0.8)
+    linkedin (0.4.4)
+      hashie (>= 1.2, < 2.1)
+      multi_json (~> 1.0)
+      oauth (~> 0.4)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -77,14 +81,6 @@ GEM
     minitest (4.7.5)
     multi_json (1.8.2)
     oauth (0.4.7)
-    omniauth (1.1.4)
-      hashie (>= 1.2, < 3)
-      rack
-    omniauth-linkedin (0.1.0)
-      omniauth-oauth (~> 1.0)
-    omniauth-oauth (1.0.1)
-      oauth
-      omniauth (~> 1.0)
     orm_adapter (0.5.0)
     pg (0.17.0)
     polyglot (0.3.3)
@@ -190,8 +186,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   letsrate (~> 1.0.8)
-  omniauth (~> 1.1.4)
-  omniauth-linkedin
+  linkedin (~> 0.4.4)
   pg
   pry-rails
   rails (= 4.0.0)

@@ -20,9 +20,9 @@ gem "letsrate", "~> 1.0.8"
 gem 'ice_cube'
 gem 'acts-as-taggable-on'
 gem 'i18n', github: 'svenfuchs/i18n'
-# gem "linkedin", "~> 0.4.4"
-gem "omniauth", "~> 1.1.4"
-gem 'omniauth-linkedin'
+gem "linkedin", "~> 0.4.4"
+# gem "omniauth", "~> 1.1.4"
+# gem 'omniauth-linkedin'
 gem 'stripe'
 
 group :doc do
