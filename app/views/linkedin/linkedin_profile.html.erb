@@ -1,6 +1,9 @@
 <h1>Linkedin Profile and Connections</h1>
+
+<% if @basic_profile == nil %>
 <a href="/linkedin_oauth_url" class="btn btn-primary btn-larg">Connect to LinkedIn</a>
 
+<% else %>
 <div class="row">
   <div class="span4">
     <div class="thumbnail">
@@ -12,3 +15,4 @@
     </div>
   </div>
 </div>
+<% end %>

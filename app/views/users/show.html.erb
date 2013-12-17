@@ -1,7 +1,47 @@
 <h2><%= "#{@user.name}" %></h2>
+
+<!-- ################### END EMAIL MODAL ################### -->
+
 <button type="button" class="btn btn-primary btn-medium" data-toggle="modal" data-target="#myModal">
   <span class="glyphicon glyphicon-envelope"></span> Message
 </button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel", style="font-size:20px; font-family: oxygen !important; font-weight: 900 !important;"><%= "To: #{@user.name}" %></h4></br>
+        <%= form_for [@user, Message.new], :action => :create, :hmtl => {:class => 'form',:role=> 'form'} do |f| %>
+          <h4 class="modal-title" id="myModalLabel", style="font-size:20px; font-family: oxygen !important; font-weight: normal !important">
+              <%= f.label :subject, "Subject: " %>
+              <%= f.text_field :subject, :class => 'subject' %>
+            </br>
+          </h4>
+      </div>
+      <div class="modal-body">
+          <center>
+            <div class="form-group">
+              <%= f.text_area :body, cols: 10, rows: 40, :class => 'body' %></br>
+            </div>
+            <div class="form-group">
+              <%= f.hidden_field :recipient_id, {:value => "#{@user.id}"}%></br>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%= f.submit nil, class: "btn btn-primary" %>
+          <% end %>
+          </center>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- ################### END EMAIL MODAL ################### -->
+
+
 </br>
 </br>
 <button type="button" class="btn btn-primary btn-medium" form class='button_to' method='get' action='<%= link_to user_calendar_path(current_user) %>'>
@@ -25,7 +65,24 @@
   </ul>
 </div>
 
+<h1>Linkedin Profile and Connections</h1>
 
+<% if current_user.id == @user.id && @basic_profile == nil %>
+<a href="/linkedin_oauth_url" class="btn btn-primary btn-larg">Connect to LinkedIn</a>
+
+<% elsif @basic_profile != nil %>
+<div class="row">
+  <div class="span4">
+    <div class="thumbnail">
+      <img src="<%= @basic_profile.picture_url %>" style="float: left;margin: 5px;">
+      <h3><%= @basic_profile.formatted_name %></h3>
+      <h4><%= @basic_profile.headline %></h4>
+      <br>
+      <p><%= @basic_profile.summary %></p>
+    </div>
+  </div>
+</div>
+<% end %>
 
 
 <!-- ######################### VENDOR INFORMATION #################### -->
@@ -41,39 +98,6 @@
 <% end %>
 
 <!-- ######################### END #################### -->
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel", style="font-size:20px; font-family: oxygen !important; font-weight: 900 !important;"><%= "To: #{@user.name}" %></h4></br>
-        <%= form_for [@user, Message.new], :action => :create, :hmtl => {:class => 'form',:role=> 'form'} do |f| %>
-        <h4 class="modal-title" id="myModalLabel", style="font-size:20px; font-family: oxygen !important; font-weight: normal !important">
-          <%= f.label :subject, "Subject: " %>
-          <%= f.text_field :subject, :class => 'subject' %>
-        </br>
-      </h4>
-    </div>
-    <div class="modal-body">
-      <center>
-        <div class="form-group">
-          <%= f.text_area :body, cols: 10, rows: 40, :class => 'body' %></br>
-        </div>
-        <div class="form-group">
-          <%= f.hidden_field :recipient_id, {:value => "#{@user.id}"}%></br>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <%= f.submit nil, class: "btn btn-primary" %>
-        <% end %>
-      </center>
-    </div>
-  </div><!-- /.modal-content -->
-</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
 
 Rating : <%= rating_for @user %>
 
