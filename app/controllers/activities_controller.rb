@@ -32,7 +32,7 @@ class ActivitiesController < ApplicationController
 
   def index
     @user = User.find_by(id: params[:user_id])
-    @activities = Activity.all
+    @activities = Activity.where(vendor_id: params[:user_id])
     render :index
   end
 
