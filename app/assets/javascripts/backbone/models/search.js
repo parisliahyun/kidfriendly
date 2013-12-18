@@ -1,1 +1,1 @@
-searchApp.Model = Backbone.Model.extend();
+// searchApp.Model = Backbone.Model.extend();

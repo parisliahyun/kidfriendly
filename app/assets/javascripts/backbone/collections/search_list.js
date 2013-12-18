@@ -1,3 +1,3 @@
-searchApp.Collection = Backbone.Collection.extend({
-  model : searchApp.Model
-});
+// searchApp.Collection = Backbone.Collection.extend({
+//   model : searchApp.Model
+// });
