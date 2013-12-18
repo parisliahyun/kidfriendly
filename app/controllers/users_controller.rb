@@ -13,8 +13,7 @@ def show
   @comment = Comment.new
   @activities = Activity.where(vendor_id: [current_user.id])
   @basic_profile = BasicProfile.find_by(user_id: [@user.id])
-  @booked_activities = Activity.where(requester_id: [current_user.id])
-
+  # @appointments = Appointment.where(client_id: [@user.id]) 
   render :show
 end
 

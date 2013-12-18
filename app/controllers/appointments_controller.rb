@@ -13,11 +13,13 @@ class AppointmentsController < ApplicationController
 
   def create
     # binding.pry
-    @appointment = Appointment.new(activity_id: params[:id])
-    @appointment.activity_id = params[:id]
+    @appointment = Appointment.new(activity_id: params[:activity_id])
+    # @appointment.activity_id = params[:id]
     @activity = Activity.find_by(id: params[:activity_id])
+    # @appointment.activity_id = @activity.id
     @appointment.vendor_id = @activity.vendor_id
     @appointment.client_id = current_user.id
+    # binding.pry
     if @appointment.save
       redirect_to new_charge_path
     end

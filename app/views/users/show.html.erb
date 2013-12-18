@@ -42,8 +42,6 @@
 <!-- ################### END EMAIL MODAL ################### -->
 
 
-</br>
-</br>
 
 <!-- ################### CALENDAR BUTTON ################### -->
 <!-- <button type="button" class="btn btn-primary btn-medium" form class='button_to' method='get' action=' link_to user_calendar_path(current_user) %>'> -->
@@ -83,11 +81,12 @@
 <div class="row">
   <div class="span4">
     <div class="thumbnail">
-      <img src="<%= @basic_profile.picture_url %>" style="float: left;margin: 5px;">
-      <h3><%= @basic_profile.formatted_name %></h3>
+      <a href="<%= @basic_profile.public_profile_url %>"><img src="<%= @basic_profile.picture_url %>" style="float: left;margin: 5px;"></a><br>
+      <h2><%= @basic_profile.formatted_name %></h2>
+            <br>
       <h4><%= @basic_profile.headline %></h4>
+      <h4>Location: <%= @basic_profile.location %></h4>
       <br>
-      <p><%= @basic_profile.summary %></p>
     </div>
   </div>
 </div>
@@ -111,16 +110,9 @@
 
 <!-- ######################### CLIENT'S ACTIVITY'S LIST #################### -->
 
- <!-- if @user.role == "client" && @user == current_user %> -->
-<h2>You're Booked for the Following Activities:</h2>
-<% @booked_activities.each do |activity| %>
-  <ul>
-    <li>Activity Name: <%= activity.name %></li>
-    <li>Description: <%= activity.description %></li>
-    <li>Price: $<%= activity.price %>0</li>
-  </ul>
-<% end %>
- <!-- end %> -->
+
+
+
 
 <!-- ######################### END CLIENT'S ACTIVITY'S LIST #################### -->
 

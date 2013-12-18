@@ -9,10 +9,8 @@ class User < ActiveRecord::Base
 
   has_one :basic_profile
   has_one :linkedin_oauth_setting
-  # has_many :connections
 
-#############
-
+###########
 
   acts_as_taggable
   letsrate_rater
@@ -20,6 +18,7 @@ class User < ActiveRecord::Base
   has_many :comments, as: :commentable   
   has_many :schedules
   has_many :activities
+  has_many :appointments, :through => :activities
 
   has_many :received_activities,
   :class_name => 'Activity',
