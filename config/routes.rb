@@ -13,6 +13,8 @@ KidFriendly::Application.routes.draw do
   resources :charges
   resources :searches, only: [:new, :create, :index]
   root "welcome#index"
+  get "about" => "welcome#about"
+
   
   devise_for :users, :path => "auth", :path_names => { :sign_in => 'login', :sign_out => 'logout' }
   # devise_for :users  

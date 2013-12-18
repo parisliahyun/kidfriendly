@@ -1,10 +1,24 @@
-<h2><%= "#{@user.name}" %></h2>
-
-<!-- ################### END EMAIL MODAL ################### -->
-
+<div class="well">
+  <div class="row">
+    <div class="col-md-4">
+    <h3><%= @user.name.capitalize %></h3>
+    <img class="profile-image" src="<%= @user.image_url %>" alt="">
+    </div>
+    <div class="col-md-6">
+    <ul class="user-profile"> 
+      <li>About: <%= @user.about %></li>
+      <% if @user.role == "vendor" %>
+      <li>Skills: <%= @user.tag_list %></li>
+      <li><%= link_to "Activities I teach", user_activities_path(@user.id)  %></li>  
+      <% end %>
+    </ul>   
+    </div>
+  </div>
+<br>
 <button type="button" class="btn btn-primary btn-medium" data-toggle="modal" data-target="#myModal">
-  <span class="glyphicon glyphicon-envelope"></span> Message
+<span class="glyphicon glyphicon-envelope"></span> Message
 </button>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -54,24 +68,12 @@
 <!-- ################### START PROFILE INFO ################### -->
 
 
-<div class="well">
-  <ul>
-    <li>Name: <%= @user.name %></li>
-    <li>About: <%= @user.about %></li>
-    <% if @user.role == "vendor" %>
-    <li>Role: <%= @user.role %></li>
-    <li>Skills: <%= @user.tag_list %></li>
-    <li><%= link_to "Activities I teach", user_activities_path(@user.id)  %></li>  
-    <% end %>
-  </ul>
-</div>
 
 <!-- ################### END PROFILE INFO ################### -->
 
 
 <!-- ################### START LINKEDIN INFO ################### -->
-
-
+ 
 
 <% if current_user.id == @user.id && @basic_profile == nil %>
 <a href="/linkedin_oauth_url" class="btn btn-primary btn-larg">Connect to LinkedIn</a>
@@ -91,10 +93,8 @@
   </div>
 </div>
 <% end %>
-
+</div>
 <!-- ################### END LINKEDIN INFO ################### -->
-
-
 
 
 
