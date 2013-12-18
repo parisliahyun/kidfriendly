@@ -1,15 +1,20 @@
-<% if @user.role == "vendor" && @user == current_user %>
-  <h2><%= link_to "Teach a new activity", new_user_activity_path(current_user) %></h2>  
-  <h2>You're Booked to Teach the Following Activities:</h2>
+<div class="container">
+<div class="well" id="vendor-activities">
+<% if @user.role == "vendor" && @user == current_user %> 
+<center><h3>You're Booked to Teach the Following Activities:</h3></center>
+
+<div class="row">
 <% @activities.each do |activity| %>
-  <ul>
-    <li>Activity Name: <%= activity.name %></li>
-    <li>Description: <%= activity.description %></li>
+<div class="col-md-2">
+  <ul class="vendor-activities">
+    <li><%= activity.name %></li>
+    <li><img class="vendor-activities" src="<%= activity.image_url %>" width="100px" height="100px"></li>
   </ul>
+</div>  
 <% end %>
+</div>
 <% end %>
-
-
-<!-- where appointment ID does not equal nil -->
+<!-- </div> -->
+</div>
 
 

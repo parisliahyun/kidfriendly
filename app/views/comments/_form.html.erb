@@ -1,4 +1,4 @@
-<h2>Leave a Review</h2>
+<h3>Leave a Review</h3>
 
 <%= form_for [@commentable, @comment] do |f| %>
   <% if @comment.errors.any? %>
@@ -16,6 +16,6 @@
     <%= f.text_area :content, rows: 8 %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "submit" %>
   </div>
 <% end %>

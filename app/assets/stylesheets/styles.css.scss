@@ -157,9 +157,60 @@ h8 {
 }
 
 ul.user-profile {
-    padding-top: 70px;
+    padding: 10px;
+    margin-top: 70px;
     list-style: none !important;
+    background-color: lightgray !important;
+    border-radius: 10px;
+    font-family: 'Text Me One', sans-serif !important; 
+    border: 1px solid gray;
 }
+
+.profile-utilities {
+    display: inline !important;
+}
+
+.well {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.activities-list {
+    background-color: #ffffff !important;
+    font-family: 'Text Me One', sans-serif !important; 
+}
+
+#vendor-activities {
+    margin-top: 40px;
+    background-color: #ffffff;
+
+}
+
+ul.vendor-activities {
+    list-style: none !important;
+    text-align: center;
+    margin: 0 auto !important;
+    font-family: 'Text Me One', sans-serif !important; 
+}
+
+img.vendor-activities {
+    border-radius: 10%;
+}
+
+#reviews {
+  margin-top: 40px;  
+  background-color: #ffffff;
+  font-family: 'Text Me One', sans-serif !important;  
+}
+
+#profile {
+    background-color: #ffffff;
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
+
+
 
 
 
