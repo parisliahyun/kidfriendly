@@ -70,22 +70,4 @@ class LinkedinController < ApplicationController
     end
   end
 
-  #   def get_connections
-      
-  #   linkedin_network = Connection.find_by_user_id(current_user.id)
-  #   if linkedin_network.nil?
-  #     client = get_client
-  #     network = client.connections(:fields => ["connections"])
-  #     binding.pry
-  #     connections = network.to_hash
-  #     connections[:location] = connections["location"]["name"]
-  #     new_connection_list = Connection.new(connections)
-  #     new_connection_list.user = current_user
-  #     new_connection_list.save 
-  #     new_connection_list
-  #   else
-  #     linkedin_network
-  #   end
-  # end
-
 end

@@ -17,7 +17,6 @@ class User < ActiveRecord::Base
   acts_as_taggable
   letsrate_rater
   letsrate_rateable    
-  has_many :appointments
   has_many :comments, as: :commentable   
   has_many :schedules
   has_many :activities

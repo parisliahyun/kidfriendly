@@ -11,6 +11,7 @@ class Activity < ActiveRecord::Base
   acts_as_taggable
   letsrate_rateable    
   has_many :comments, as: :commentable
+  has_many :appointments
 
   def transform_date
     d = Date.parse(self.date.to_s)

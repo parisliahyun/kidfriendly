@@ -12,7 +12,6 @@ KidFriendly::Application.routes.draw do
   get "comments/index"
   get "comments/new"
   resources :charges
-  resources :appointments 
   resources :searches, only: [:new, :create, :index]
   root "welcome#index"
   
@@ -23,7 +22,7 @@ KidFriendly::Application.routes.draw do
     resources :comments
     get "calendar" => "calendar#show", :as => "calendar"
     post :generate_new_password_email
-    resources :messages do
+    resources :messages do     
       member do
         get :show
         post :new
@@ -33,10 +32,10 @@ KidFriendly::Application.routes.draw do
       end
     end
     resources :activities, :shallow=>true   do
+      resources :appointments 
       resources :comments
       member do
-        put 'claim'
-        put 'confirm'
+        put 'book'
       end
     end
   end 

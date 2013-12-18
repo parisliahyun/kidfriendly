@@ -9,7 +9,7 @@
     <li>Tags: <%= @activity.tag_list %></li>
     <li>Price: $<%= @activity.price %>0</li>
     <li>This activity is taught by: <%= link_to @vendor.name, user_path(@vendor.id) %></li>
-    <li><%= link_to "View available dates", user_schedules_path(@activity.vendor_id)%></li>
+    <!-- <li>link_to "View available dates", user_schedules_path(@activity.vendor_id)%></li> -->
     <% if current_user.id == @activity.vendor_id %>
     <li><%= link_to "Edit this activity", edit_activity_path(@activity) %></li>
     <% end %>
@@ -18,8 +18,9 @@
   </div>
 
   <% if current_user.id != @activity.vendor_id %>
-    <%= link_to new_charge_path, :class => "btn btn-primary btn-medium" do %>
+    <%= button_to activity_appointments_path(@activity.id), :id => @activity.id, :method => :create, :class => "btn btn-primary btn-medium" do %>
     <span class="glyphicon glyphicon-ok-circle"></span> Book it!
+    <!-- binding.pry %> -->
     <% end %>
   <% end %>
   <br>

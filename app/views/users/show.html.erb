@@ -44,11 +44,18 @@
 
 </br>
 </br>
-<button type="button" class="btn btn-primary btn-medium" form class='button_to' method='get' action='<%= link_to user_calendar_path(current_user) %>'>
-  <span class="glyphicon glyphicon-calendar"></span> Calendar
-</button>
-</br>
-</br>
+
+<!-- ################### CALENDAR BUTTON ################### -->
+<!-- <button type="button" class="btn btn-primary btn-medium" form class='button_to' method='get' action=' link_to user_calendar_path(current_user) %>'> -->
+<!--   <span class="glyphicon glyphicon-calendar"></span> Calendar
+</button> -->
+
+<!-- ################### END CALENDAR BUTTON ################### -->
+
+
+<!-- ################### START PROFILE INFO ################### -->
+
+
 <div class="well">
   <ul>
     <li>Name: <%= @user.name %></li>
@@ -56,21 +63,23 @@
     <% if @user.role == "vendor" %>
     <li>Role: <%= @user.role %></li>
     <li>Skills: <%= @user.tag_list %></li>
-    <li><%= link_to "Activities I teach", user_activities_path(@user.id)  %></li>
-    <li><%= link_to "My availability", user_schedules_path(@user.id)  %></li>
-    <% @activities.each do  |activity| %>
-    <li>Activity Description: <%= activity.description %></li>
-    <% end %>    
+    <li><%= link_to "Activities I teach", user_activities_path(@user.id)  %></li>  
     <% end %>
   </ul>
 </div>
 
-<h1>Linkedin Profile and Connections</h1>
+<!-- ################### END PROFILE INFO ################### -->
+
+
+<!-- ################### START LINKEDIN INFO ################### -->
+
+
 
 <% if current_user.id == @user.id && @basic_profile == nil %>
 <a href="/linkedin_oauth_url" class="btn btn-primary btn-larg">Connect to LinkedIn</a>
 
 <% elsif @basic_profile != nil %>
+<h2>Linkedin Profile and Connections</h2>
 <div class="row">
   <div class="span4">
     <div class="thumbnail">
@@ -84,24 +93,40 @@
 </div>
 <% end %>
 
+<!-- ################### END LINKEDIN INFO ################### -->
 
-<!-- ######################### VENDOR INFORMATION #################### -->
+
+
+
+
+<!-- ######################### VENDOR'S ACTIVITIES LIST #################### -->
 <% if @user.role == "vendor" && @user == current_user %>
-<%= render "users/vendor" %> 
+  <%= render "users/vendor" %> 
 <% end %>
 
-<!-- ######################### END #################### -->
+<!-- ######################### END VENDOR'S ACTIVITIES LIST#################### -->
 
-<!-- ######################### CLIENT INFORMATION #################### -->
-<% if @user.role == "client" && @user == current_user %>
-<%= render "users/client" %> 
+
+
+
+<!-- ######################### CLIENT'S ACTIVITY'S LIST #################### -->
+
+ <!-- if @user.role == "client" && @user == current_user %> -->
+<h2>You're Booked for the Following Activities:</h2>
+<% @booked_activities.each do |activity| %>
+  <ul>
+    <li>Activity Name: <%= activity.name %></li>
+    <li>Description: <%= activity.description %></li>
+    <li>Price: $<%= activity.price %>0</li>
+  </ul>
 <% end %>
+ <!-- end %> -->
 
-<!-- ######################### END #################### -->
+<!-- ######################### END CLIENT'S ACTIVITY'S LIST #################### -->
 
 Rating : <%= rating_for @user %>
 
-<h2>Comments</h2>
+<h2>Reviews</h2>
 
 <%= render "comments/comments" %>
 <%= render "comments/form" %>

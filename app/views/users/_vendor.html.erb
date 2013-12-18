@@ -1,9 +1,15 @@
 <% if @user.role == "vendor" && @user == current_user %>
-  <h2><%= link_to "Create a new activity", new_user_activity_path(current_user) %></h2>
-
-<!-- list owned activities
-current appointment 
-past clients -->
-
+  <h2><%= link_to "Teach a new activity", new_user_activity_path(current_user) %></h2>  
+  <h2>You're Booked to Teach the Following Activities:</h2>
+<% @activities.each do |activity| %>
+  <ul>
+    <li>Activity Name: <%= activity.name %></li>
+    <li>Description: <%= activity.description %></li>
+  </ul>
 <% end %>
+<% end %>
+
+
+<!-- where appointment ID does not equal nil -->
+
 
