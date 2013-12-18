@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
- 
+
   def new
     @message = Message.new
     if params[:reply_to]
@@ -24,30 +24,23 @@ class MessagesController < ApplicationController
   end
 
   def sent
-    @messages = Message.where(recipient_id: [current_user.id.to_s]) 
+    @messages = Message.where(sender_id: [current_user.id.to_s]) 
     render :sent
   end
 
   def index
-  # if params[:mailbox] == "sent"
-    # @messages = Message.where(sender_id: [current_user.id.to_s]) 
-    # render :sent
-    # elsif params[:mailbox] == "inbox"
     @messages = Message.where(recipient_id: [current_user.id.to_s]) 
-  # elsif params[:mailbox] == "archived"
-    # @messages = @user.archived_messages
-  # end
-  render :index
-end
+    render :index
+  end
 
-def show
-  @message = Message.find_by(id: params[:id])
-  render :show
-end
+  def show
+    @message = Message.find_by(id: params[:id])
+    render :show
+  end
 
-private
+  private
 
-def message_params
-  params.require(:message).permit(:recipient_id, :subject, :body)
-end
+  def message_params
+    params.require(:message).permit(:recipient_id, :subject, :body)
+  end
 end
