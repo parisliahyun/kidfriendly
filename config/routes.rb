@@ -23,7 +23,7 @@ KidFriendly::Application.routes.draw do
     resources :comments
     get "calendar" => "calendar#show", :as => "calendar"
     post :generate_new_password_email
-    resources :messages      
+    resources :messages     
       match 'sent', to: 'messages#sent', via: [:get]
       member do 
         get :show
@@ -32,7 +32,7 @@ KidFriendly::Application.routes.draw do
         post :trash
         post :empty_trash
       end
-    
+   
 
     resources :activities, :shallow=>true   do
       resources :appointments 

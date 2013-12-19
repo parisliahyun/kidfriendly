@@ -5,7 +5,7 @@
     <!-- date_select :schedule, :from_date %> -->
     <%= label_tag(:q, "Categories:", :class => 'q') %>
     <%= select_tag :id, options_from_collection_for_select(Activity.all, :id, :tag_list, prompt: true, :multiple => true)  %>
-    <%= submit_tag "Go", :class => 'go' %>  
+    <%= submit_tag "Go", class: "btn btn-primary" %>  
      <!-- binding.pry %>  -->
     <% end %>  
   </div> 

@@ -6,38 +6,9 @@
         <button type="button" class="btn btn-primary btn-medium" data-toggle="modal" data-target="#myModal">
           <span class="glyphicon glyphicon-envelope"></span> Message
         </button>
-        <br>
-        <br>
-        <% if current_user.id == @user.id && @basic_profile == nil %>
-        <a href="/linkedin_oauth_url" class="btn btn-primary btn-larg">Connect to LinkedIn</a>
-        <% end  %>
-        <center><%= rating_for @user %></center>
-    </div>
 
-    <div class="col-md-7" id="user-col-7">   
-      <ul class="user-profile"> 
-        <li>About: <%= @user.about %></li>
-        <li>Interests: <%= @user.interests %></li>
-        <% if @user.role == "vendor" %>
-        <li>Skills: <%= @user.skills %></li>  
-        <li>Availability: <%= @user.availability %></li>
-        <% end %>
-      </ul>   
-      <% if @basic_profile != nil %>
-      <h3>Verification</h3>
-      <!-- <div class="row">
-      <div class="span4"> -->
-      <div class="linkedin">
-        <a href="<%= @basic_profile.public_profile_url %>"><img src="<%= @basic_profile.picture_url %>" style="float: left;margin: 5px; border-radius: 10px;"></a><br><br>
-        <p><%= @basic_profile.formatted_name %></p>
-              <br>
-        <p><%= @basic_profile.headline %></p>
-        <br>
-      <% end %>
-    </div>
-  </div>
-</div>
-</div>
+
+
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -71,7 +42,43 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+
 <!-- ################### END EMAIL MODAL ################### -->
+
+
+
+        <br>
+        <br>
+        <% if current_user.id == @user.id && @basic_profile == nil %>
+        <a href="/linkedin_oauth_url" class="btn btn-primary btn-larg">Connect to LinkedIn</a>
+        <% end  %>
+        <center><%= rating_for @user %></center>
+    </div>
+
+    <div class="col-md-7" id="user-col-7">   
+      <ul class="user-profile"> 
+        <li>About: <%= @user.about %></li>
+        <li>Interests: <%= @user.interests %></li>
+        <% if @user.role == "vendor" %>
+        <li>Skills: <%= @user.skills %></li>  
+        <li>Availability: <%= @user.availability %></li>
+        <% end %>
+      </ul>   
+      <% if @basic_profile != nil %>
+      <h3>Verification</h3>
+      <!-- <div class="row">
+      <div class="span4"> -->
+      <div class="linkedin">
+        <a href="<%= @basic_profile.public_profile_url %>"><img src="<%= @basic_profile.picture_url %>" style="float: left;margin: 5px; border-radius: 10px;"></a><br><br>
+        <p><%= @basic_profile.formatted_name %></p>
+              <br>
+        <p><%= @basic_profile.headline %></p>
+        <br>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
 
 
 
