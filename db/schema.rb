@@ -200,10 +200,11 @@ ActiveRecord::Schema.define(version: 20131212210911439) do
     t.string   "role"
     t.string   "image_url"
     t.text     "about"
-    t.text     "interests",                                        array: true
-    t.text     "skills",                                           array: true
     t.string   "provider"
     t.string   "uid"
+    t.text     "availability"
+    t.text     "interests"
+    t.text     "skills"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

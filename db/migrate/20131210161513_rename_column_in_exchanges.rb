@@ -5,3 +5,4 @@ class RenameColumnInExchanges < ActiveRecord::Migration
     end
   end
 end
+

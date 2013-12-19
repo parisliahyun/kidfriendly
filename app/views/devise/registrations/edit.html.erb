@@ -19,14 +19,29 @@
    </div>
 
    <div class="form-group">
-     <%= f.label :about, "about me (your interests, life story, experience teaching, all that good stuff)" %>
+     <%= f.label :about, "about me" %>
      <%= f.text_area :about, class: "form-control", :autofocus => true %>
    </div>
 
+  <div class="form-group">
+     <%= f.label :interests, "interests" %>
+     <%= f.text_area :interests, class: "form-control", :autofocus => true %>
+  </div>
+
    <% if @user.role == "vendor" %>
 
+  <div class="form-group">
+     <%= f.label :skills, "skills" %>
+     <%= f.text_area :skills, class: "form-control", :autofocus => true %>
+  </div>
+
+  <div class="form-group">
+     <%= f.label :availability, "availability" %>
+     <%= f.text_field :availability, class: "form-control", :autofocus => true %>
+   </div>
+
    <div class="form group">
-    <%= f.label :tag_list, "skills (separated by commas)" %><br />
+    <%= f.label :tag_list, "category" %><br />
     <%= f.text_area :tag_list, class: "form-control", :autofocus => true %>
   </div> 
 

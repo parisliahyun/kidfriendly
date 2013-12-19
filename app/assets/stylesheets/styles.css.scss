@@ -148,7 +148,7 @@ h8 {
 }
 
 .profile-image {
-    float: left;
+    /*float: left;*/
     border-radius: 10%;
     margin: 0 auto;
     margin-bottom: 20px !important;  
@@ -156,7 +156,7 @@ h8 {
     width: 355px !important;
 }
 
-ul.user-profile {
+ul.user-profile, .activity-ul-list {
     padding: 10px;
     margin-top: 70px;
     list-style: none !important;
@@ -203,12 +203,31 @@ img.vendor-activities {
   font-family: 'Text Me One', sans-serif !important;  
 }
 
-#profile {
+#profile, #activity {
+    font-size: 16px;
     background-color: #ffffff;
     margin: 0 auto !important;
-    text-align: center !important;
+    text-align: left !important;
 }
 
+#user-col-5, #user-activity-col-5 {
+   margin: 0 auto !important;
+   text-align: center;
+}
+
+#leave-review {
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+#comments {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 30px;
+    margin-left: 80px;
+    margin-right: 80px;
+    background-color: mintcream;
+}
 
 
 
