@@ -1,7 +1,5 @@
 
 .navbar-inverse, .navbar, .navbar-default{
-/*    position: fixed !important;
-    width: 100% !important;*/
     border-radius: 0;
 }
 
@@ -42,7 +40,7 @@
 
 h3 {
     font-family: 'Text Me One', sans-serif !important;   
-    font-size: 35px;
+    font-size: 18px;
 }
 
 .search-well {
@@ -263,4 +261,21 @@ h9 {
 .jumbotron {
     margin-top: 70px;
     text-align: center;
+}
+
+.form-control {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.panel-body {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.panel-heading, .panel-footer {
+    text-align: center;
+    margin: 0 auto;
 }
