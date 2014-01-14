@@ -1,18 +1,17 @@
 <div class="container">
-<div class="well" id="vendor-activities">
-<!-- if @user.role == "vendor" && @user == current_user %>  -->
-<center><h3>Activities I teach:</h3></center>
-
-<div class="row">
-<% @activities.each do |activity| %>
-<div class="col-md-2">
-  <ul class="vendor-activities">
-    <li><%= activity.name %></li>
-    <li><a href="<%= activity_path(activity.id) %>"><img class="vendor-activities" src="<%= activity.image_url %>" width="100px" height="100px"></a></li>
-  </ul>
-</div>  
-<% end %>
-</div>
+  <div class="well" id="vendor-activities">
+    <!-- if @user.role == "vendor" && @user == current_user %>  -->
+    <center><h3>Activities I teach:</h3></center>
+      <div class="row">
+        <% @activities.each do |activity| %>
+        <div class="col-md-2">
+          <ul class="vendor-activities">
+            <li><%= activity.name %></li>
+            <li><a href="<%= activity_path(activity.id) %>"><img class="vendor-activities" src="<%= activity.image_url %>" width="100px" height="100px"></a></li>
+          </ul>
+      </div>  
+    <% end %>
+  </div>
 <!-- end %> -->
 <!-- </div> -->
 </div>

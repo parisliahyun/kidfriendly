@@ -5,27 +5,23 @@
     </div>
   </div>
   <div class="panel-body">
-      <%= form_for [@commentable, @comment] do |f| %>
-        <% if @comment.errors.any? %>
-          <div class="error_messages">
-            <h2>Please correct the following errors.</h2>
-            <ul>
-            <% @comment.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-            <% end %>
-            </ul>
-          </div>
-        <% end %>
-
-        <div class="form-group">
-        <!-- <div class="field"> -->
-          <%= f.text_area :content, class: "form-control", :autofocus => true %>
-        </div>
-        <div class="form-group">
-        <!-- <div class="actions"> -->
-          <%= f.submit "submit", class: "btn btn-primary" %>
+    <%= form_for [@commentable, @comment] do |f| %>
+      <% if @comment.errors.any? %>
+        <div class="error_messages">
+          <h2>Please correct the following errors.</h2>
+          <ul>
+          <% @comment.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
         </div>
       <% end %>
-
-  </div>    
+      <div class="form-group">
+        <%= f.text_area :content, class: "form-control", :autofocus => true %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "submit", class: "btn btn-primary" %>
+  </div>
+    <% end %>
+</div>    
 

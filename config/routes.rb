@@ -14,7 +14,6 @@ KidFriendly::Application.routes.draw do
   resources :searches, only: [:new, :create, :index]
   root "welcome#index"
   get "about" => "welcome#about"
-
   
   devise_for :users, :path => "auth", :path_names => { :sign_in => 'login', :sign_out => 'logout' }
   # devise_for :users  
@@ -33,7 +32,6 @@ KidFriendly::Application.routes.draw do
         post :empty_trash
       end
    
-
     resources :activities, :shallow=>true   do
       resources :appointments 
       resources :comments

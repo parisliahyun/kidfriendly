@@ -1,40 +1,36 @@
 <h6>Create an activity:</h6>
+<div class="well">
+  <div class="panel-body">
+    <%= form_for [@activity], :action => :create, :html => {:class => 'form',:role => 'form'} do |f| %>
 
- <div class="well">
+    <div class="form group">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+   
+    <div class="form group">
+      <%= f.label :image_url %>
+      <%= f.text_field :image_url %>
+    </div>
+    
+    <div class="form group">
+      <%= f.label :description %></br> 
+      <%= f.text_field :description %></br>
+    </div>  
 
-<div class="panel-body">
-  <%= form_for [@activity], :action => :create, :html => {:class => 'form',:role => 'form'} do |f| %>
+    <div class="form group">
+      <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+      <%= f.text_field :tag_list %>
+    </div> 
 
-  <div class="form group">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <div class="form group">
+      <%= f.label :price %></br> 
+      <%= f.number_field :price %></br> 
+    </div> 
+     <br>
+     <br>
+    <%= f.submit nil, class: "btn btn-primary" %>
+     <% end %> 
   </div>
- 
-  <div class="form group">
-    <%= f.label :image_url %>
-    <%= f.text_field :image_url %>
-  </div>
-  
-  <div class="form group">
-    <%= f.label :description %></br> 
-    <%= f.text_field :description %></br>
-  </div>  
-
-  <div class="form group">
-    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
-    <%= f.text_field :tag_list %>
-  </div> 
-
-  <div class="form group">
-    <%= f.label :price %></br> 
-    <%= f.number_field :price %></br> 
-  </div> 
-
-   <br>
-   <br>
-  <%= f.submit nil, class: "btn btn-primary" %>
-   <% end %> 
-
-</div>
 </div>
 
