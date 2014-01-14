@@ -7,20 +7,17 @@
           <span class="glyphicon glyphicon-envelope"></span> Message
         </button>
 
-
-
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel", style="font-size:20px; font-family: oxygen !important; font-weight: 900 !important;"><%= "To: #{@user.name}" %></h4></br>
+          <h4 class="modal-title" id="myModalLabel", style="font-size:20px; font-family: oxygen !important; font-weight: 900 !important;"><%= "To: #{@user.name}" %></h4>
         <%= form_for [@user, Message.new], :action => :create, :hmtl => {:class => 'form',:role=> 'form'} do |f| %>
           <h4 class="modal-title" id="myModalLabel", style="font-size:20px; font-family: oxygen !important; font-weight: normal !important">
               <%= f.label :subject, "Subject: " %>
               <%= f.text_field :subject, :class => 'subject' %>
-            </br>
           </h4>
       </div>
       <div class="modal-body">
@@ -42,13 +39,8 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-
 <!-- ################### END EMAIL MODAL ################### -->
 
-
-
-        <br>
-        <br>
         <% if current_user.id == @user.id && @basic_profile == nil %>
         <a href="/linkedin_oauth_url" class="btn btn-primary btn-larg">Connect to LinkedIn</a>
         <% end  %>
@@ -75,37 +67,16 @@
         <p><%= @basic_profile.headline %></p>
         <br>
       <% end %>
+     </div>
     </div>
   </div>
 </div>
-</div>
-
-
-
-<!-- ################### CALENDAR BUTTON ################### -->
-<!-- <button type="button" class="btn btn-primary btn-medium" form class='button_to' method='get' action=' link_to user_calendar_path(current_user) %>'> -->
-<!--   <span class="glyphicon glyphicon-calendar"></span> Calendar
-</button> -->
-
-<!-- ################### END CALENDAR BUTTON ################### -->
 
 <!-- ######################### VENDOR'S ACTIVITIES LIST #################### -->
 <!-- if @user.role == "vendor" && @user == current_user %> -->
   <%= render "users/vendor" %> 
  <!-- end %> -->
-
 <!-- ######################### END VENDOR'S ACTIVITIES LIST#################### -->
-
-
-
-
-<!-- ######################### CLIENT'S ACTIVITY'S LIST #################### -->
-
-
-
-
-
-<!-- ######################### END CLIENT'S ACTIVITY'S LIST #################### -->
 
 <div class="well" id="reviews">
   <h3>Reviews</h3>
