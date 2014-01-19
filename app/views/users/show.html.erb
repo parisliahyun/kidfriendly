@@ -3,9 +3,38 @@
     <div class="col-md-5" id="user-col-5">
       <h3><strong><%= @user.name.upcase %></strong></h3>
       <img class="profile-image" src="<%= @user.image_url %>" alt="profile image">
-        <button type="button" class="btn btn-primary btn-medium" data-toggle="modal" data-target="#myModal">
-          <span class="glyphicon glyphicon-envelope"></span> Message
-        </button>
+        <% if current_user.id == @user.id && @basic_profile == nil %>
+        <a href="/linkedin_oauth_url" class="btn btn-primary btn-larg">Connect to LinkedIn</a>
+        <% end  %>
+        <center><%= rating_for @user %></center>
+    </div>
+    <div class="col-md-7" id="user-col-7">   
+      <ul class="user-profile"> 
+        <li>About: <%= @user.about %></li>
+        <li>Interests: <%= @user.interests %></li>
+        <% if @user.role == "vendor" %>
+        <li>Skills: <%= @user.skills %></li>  
+        <li>Availability: <%= @user.availability %></li>
+        <% end %>
+      </ul>   
+      <% if @basic_profile != nil %>
+      <h3>Verification</h3>
+      <!-- <div class="row">
+      <div class="span4"> -->
+      <div class="linkedin">
+        <a href="<%= @basic_profile.public_profile_url %>"><img src="<%= @basic_profile.picture_url %>" style="float: left;margin: 5px; border-radius: 10px;"></a><br><br>
+        <p><%= @basic_profile.formatted_name %></p>
+              <br>
+        <p><%= @basic_profile.headline %></p>
+        <br>
+      <% end %>
+     </div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-primary btn-medium" id="emails" data-toggle="modal" data-target="#myModal">
+    <span class="glyphicon glyphicon-envelope"></span> Message
+  </button>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -41,37 +70,6 @@
 
 <!-- ################### END EMAIL MODAL ################### -->
 
-        <% if current_user.id == @user.id && @basic_profile == nil %>
-        <a href="/linkedin_oauth_url" class="btn btn-primary btn-larg">Connect to LinkedIn</a>
-        <% end  %>
-        <center><%= rating_for @user %></center>
-    </div>
-
-    <div class="col-md-7" id="user-col-7">   
-      <ul class="user-profile"> 
-        <li>About: <%= @user.about %></li>
-        <li>Interests: <%= @user.interests %></li>
-        <% if @user.role == "vendor" %>
-        <li>Skills: <%= @user.skills %></li>  
-        <li>Availability: <%= @user.availability %></li>
-        <% end %>
-      </ul>   
-      <% if @basic_profile != nil %>
-      <h3>Verification</h3>
-      <!-- <div class="row">
-      <div class="span4"> -->
-      <div class="linkedin">
-        <a href="<%= @basic_profile.public_profile_url %>"><img src="<%= @basic_profile.picture_url %>" style="float: left;margin: 5px; border-radius: 10px;"></a><br><br>
-        <p><%= @basic_profile.formatted_name %></p>
-              <br>
-        <p><%= @basic_profile.headline %></p>
-        <br>
-      <% end %>
-     </div>
-    </div>
-  </div>
-</div>
-
 <!-- ######################### VENDOR'S ACTIVITIES LIST #################### -->
 <!-- if @user.role == "vendor" && @user == current_user %> -->
   <%= render "users/vendor" %> 
@@ -84,5 +82,9 @@
   <%= render "comments/comments" %>
   <%= render "comments/form" %>
 </div>
+
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag 'jquery.raty.js','letsrate.js'%>
+<% end %> 
 
 

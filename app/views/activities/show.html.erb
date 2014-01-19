@@ -12,8 +12,6 @@
           <!-- binding.pry %> -->
           <% end %>
           <% end %>
-        <br>
-        <br>
     </div>
     <div class="col-md-7" id="user-activity-col-7">
         <ul class="activity-ul-list">
@@ -32,12 +30,14 @@
 
   <div class="well" id="reviews">
     <center><h3>Reviews</h3></center>
-    <br>
-
     <%= render "comments/comments" %>
     <%= render "comments/form" %>
   </div>
 </div>
+
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag 'jquery.raty.js','letsrate.js'%>
+<% end %> 
 
 
 

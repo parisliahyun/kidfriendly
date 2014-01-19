@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require twitter-bootstrap-calendar
 //= require turbolinks
 //= require jquery.raty
 //= require letsrate
