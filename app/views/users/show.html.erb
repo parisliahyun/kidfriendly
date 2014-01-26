@@ -6,6 +6,9 @@
         <% if current_user.id == @user.id && @basic_profile == nil %>
         <a href="/linkedin_oauth_url" class="btn btn-primary btn-larg">Connect to LinkedIn</a>
         <% end  %>
+        <button type="button" class="btn btn-primary btn-medium" id="emails" data-toggle="modal" data-target="#myModal">
+          <span class="glyphicon glyphicon-envelope"></span> Message
+        </button>
         <center><%= rating_for @user %></center>
     </div>
     <div class="col-md-7" id="user-col-7">   
@@ -21,29 +24,46 @@
       <h3>Verification</h3>
       <!-- <div class="row">
       <div class="span4"> -->
-      <div class="linkedin">
-        <a href="<%= @basic_profile.public_profile_url %>"><img src="<%= @basic_profile.picture_url %>" style="float: left;margin: 5px; border-radius: 10px;"></a><br><br>
-        <p><%= @basic_profile.formatted_name %></p>
-              <br>
-        <p><%= @basic_profile.headline %></p>
-        <br>
-      <% end %>
-     </div>
+        <div class="linkedin">
+          <a href="<%= @basic_profile.public_profile_url %>"><img src="<%= @basic_profile.picture_url %>" style="float: left;margin: 5px; border-radius: 10px;"></a><br><br>
+          <p><%= @basic_profile.formatted_name %></p>
+                <br>
+          <p><%= @basic_profile.headline %></p>
+          <br>
+        <% end %>
+       </div>
     </div>
   </div>
-  <button type="button" class="btn btn-primary btn-medium" id="emails" data-toggle="modal" data-target="#myModal">
-    <span class="glyphicon glyphicon-envelope"></span> Message
-  </button>
+
+</div> <!-- end of well -->
+
+<!-- ######################### VENDOR'S ACTIVITIES LIST #################### -->
+<!-- if @user.role == "vendor" && @user == current_user %> -->
+  <%= render "users/vendor" %> 
+ <!-- end %> -->
+<!-- ######################### END VENDOR'S ACTIVITIES LIST#################### -->
+
+<div class="well" id="reviews">
+  <h3>Reviews</h3>
+
+  <%= render "comments/comments" %>
+  <%= render "comments/form" %>
 </div>
 
-<!-- Modal -->
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag 'jquery.raty.js','letsrate.js'%>
+<% end %> 
+
+
+
+<!-- Email Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           <h4 class="modal-title" id="myModalLabel", style="font-size:20px; font-family: oxygen !important; font-weight: 900 !important;"><%= "To: #{@user.name}" %></h4>
-        <%= form_for [@user, Message.new], :action => :create, :hmtl => {:class => 'form',:role=> 'form'} do |f| %>
+        <%= form_for [@user, Message.new], :action => :create, :html => {:class => 'form',:role=> 'form'} do |f| %>
           <h4 class="modal-title" id="myModalLabel", style="font-size:20px; font-family: oxygen !important; font-weight: normal !important">
               <%= f.label :subject, "Subject: " %>
               <%= f.text_field :subject, :class => 'subject' %>
@@ -70,21 +90,5 @@
 
 <!-- ################### END EMAIL MODAL ################### -->
 
-<!-- ######################### VENDOR'S ACTIVITIES LIST #################### -->
-<!-- if @user.role == "vendor" && @user == current_user %> -->
-  <%= render "users/vendor" %> 
- <!-- end %> -->
-<!-- ######################### END VENDOR'S ACTIVITIES LIST#################### -->
-
-<div class="well" id="reviews">
-  <h3>Reviews</h3>
-
-  <%= render "comments/comments" %>
-  <%= render "comments/form" %>
-</div>
-
-<% content_for :javascript_includes do %>
-  <%= javascript_include_tag 'jquery.raty.js','letsrate.js'%>
-<% end %> 
 
 

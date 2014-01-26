@@ -12,7 +12,7 @@
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          <li><%= link_to "About", about_path %></li>
+          <!-- <li>< link_to "About", about_path ></li> -->
           <li><%= link_to "Teach a new activity", new_user_activity_path(current_user) %></li>
           <li><%= link_to "Your dashboard", user_path(current_user) %></li>
           <li><%= link_to "Search activities", new_search_path %></li>

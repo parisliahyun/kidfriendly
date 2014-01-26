@@ -1,8 +1,8 @@
-= bootstrap_calendar do |date| 
-  = link_to date.day, new_user_activity_path(current_user, :activity => {:scheduled_at => date.beginning_of_day + 12.hours})
-  - if @activities_by_date[date.to_s] 
-    %ul.activity_summary
-      - @activities_by_date[date.to_s].each do |activity| 
-        %li
-          = link_to "#{activity.description}", activity, :remote => true
+/ = bootstrap_calendar do |date| 
+/   = link_to date.day, new_user_activity_path(current_user, :activity => {:scheduled_at => date.beginning_of_day + 12.hours})
+/   - if @activities_by_date[date.to_s] 
+/     %ul.activity_summary
+/       - @activities_by_date[date.to_s].each do |activity| 
+/         %li
+/           = link_to "#{activity.description}", activity, :remote => true
 
