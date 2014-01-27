@@ -1,6 +1,6 @@
 <div class="container">
   <div class="well" id="vendor-activities">
-    <!-- if @user.role == "vendor" && @user == current_user %>  -->
+    <% if @user.role == "vendor" %> 
     <center><h3>Activities I teach:</h3></center>
       <div class="row">
         <% @activities.each do |activity| %>
@@ -9,11 +9,10 @@
             <li><%= activity.name %></li>
             <li><a href="<%= activity_path(activity.id) %>"><img class="vendor-activities" src="<%= activity.image_url %>" width="100px" height="100px"></a></li>
           </ul>
-      </div>  
+        </div>  
+        <% end %>
+      </div>
     <% end %>
   </div>
-<!-- end %> -->
-<!-- </div> -->
 </div>
-
 

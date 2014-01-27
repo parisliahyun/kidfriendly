@@ -22,8 +22,6 @@
       </ul>   
       <% if @basic_profile != nil %>
       <h3>Verification</h3>
-      <!-- <div class="row">
-      <div class="span4"> -->
         <div class="linkedin">
           <a href="<%= @basic_profile.public_profile_url %>"><img src="<%= @basic_profile.picture_url %>" style="float: left;margin: 5px; border-radius: 10px;"></a><br><br>
           <p><%= @basic_profile.formatted_name %></p>
@@ -38,9 +36,7 @@
 </div> <!-- end of well -->
 
 <!-- ######################### VENDOR'S ACTIVITIES LIST #################### -->
-<!-- if @user.role == "vendor" && @user == current_user %> -->
   <%= render "users/vendor" %> 
- <!-- end %> -->
 <!-- ######################### END VENDOR'S ACTIVITIES LIST#################### -->
 
 <div class="well" id="reviews">
@@ -49,12 +45,6 @@
   <%= render "comments/comments" %>
   <%= render "comments/form" %>
 </div>
-
-<% content_for :javascript_includes do %>
-  <%= javascript_include_tag 'jquery.raty.js','letsrate.js'%>
-<% end %> 
-
-
 
 <!-- Email Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -90,5 +80,7 @@
 
 <!-- ################### END EMAIL MODAL ################### -->
 
-
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag 'jquery.raty.js','letsrate.js'%>
+<% end %> 
 
