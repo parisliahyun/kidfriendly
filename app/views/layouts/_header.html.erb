@@ -6,7 +6,10 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <%= link_to "Kid-Friend.ly", root_path, class: "navbar-brand" %>
+
+   <%=link_to(image_tag("http://i1292.photobucket.com/albums/b561/parisliahyun/kidfriendlywithhearts_logo_zps9c74d8a0.gif",:size => "275x80", :alt=> "kidfriendly.is"),
+{:controller=>"searches", :action=>"new"}, :title=>"Searches", :class=>"navbar-brand") %>
+     <!-- link_to "Kid-Friend.ly", root_path, class: "navbar-brand" %> -->
   </div>
 
   <div class="collapse navbar-collapse navbar-ex1-collapse">
