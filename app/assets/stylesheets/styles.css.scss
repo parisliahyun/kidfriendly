@@ -194,12 +194,6 @@ img.vendor-activities {
     border-radius: 10%;
 }
 
-#reviews {
-  margin-top: 40px;  
-  background-color: #ffffff;
-  font-family: 'Text Me One', sans-serif !important;  
-}
-
 #profile, #activity {
     font-size: 16px;
     background-color: #ffffff;
@@ -220,15 +214,6 @@ img.vendor-activities {
 #leave-review {
     margin-left: 80px;
     margin-right: 80px;
-}
-
-#comments {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    margin-bottom: 30px;
-    margin-left: 80px;
-    margin-right: 80px;
-    background-color: mintcream;
 }
 
 .linkedin {
@@ -326,3 +311,24 @@ h9 {
  .dropdown {
     text-transform: lowercase;
  }   
+
+ #reviews {
+  margin-top: 40px;  
+  background-color: #ffffff;
+  font-family: 'Text Me One', sans-serif !important; 
+}
+
+#comments {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 30px;
+    margin-left: 80px;
+    margin-right: 80px;
+    background-color: mintcream;
+}
+
+.comment {
+    text-align: left !important;
+    margin-left: 55px !important;
+    margin-right: 30px !important;
+}
