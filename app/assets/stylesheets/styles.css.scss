@@ -5,7 +5,9 @@
     border: white;
 }
 
-
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: orange;
+}
 
 .subject   {
     text-align: left;
