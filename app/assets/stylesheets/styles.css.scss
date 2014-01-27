@@ -1,7 +1,11 @@
 
 .navbar-inverse, .navbar, .navbar-default{
     border-radius: 0;
+    background-color: white;
+    border: white;
 }
+
+
 
 .subject   {
     text-align: left;
@@ -331,6 +335,4 @@ h9 {
     margin-top: 40px;  
     background-color: #ffffff;
     font-family: 'Text Me One', sans-serif !important; 
-    margin-left: 80px;
-    margin-right: 80px;
 }

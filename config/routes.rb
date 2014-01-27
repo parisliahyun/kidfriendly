@@ -12,7 +12,7 @@ KidFriendly::Application.routes.draw do
   get "comments/new"
   resources :charges
   resources :searches, only: [:new, :create, :index]
-  root "welcome#index"
+  root "searches#new"
   get "about" => "welcome#about"
   
   devise_for :users, :path => "auth", :path_names => { :sign_in => 'login', :sign_out => 'logout' }
