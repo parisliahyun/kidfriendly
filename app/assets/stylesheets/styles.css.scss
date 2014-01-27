@@ -312,12 +312,6 @@ h9 {
     text-transform: lowercase;
  }   
 
- #reviews {
-  margin-top: 40px;  
-  background-color: #ffffff;
-  font-family: 'Text Me One', sans-serif !important; 
-}
-
 #comments {
     padding-top: 40px;
     padding-bottom: 40px;
@@ -331,4 +325,12 @@ h9 {
     text-align: left !important;
     margin-left: 55px !important;
     margin-right: 30px !important;
+}
+
+ #reviews {
+    margin-top: 40px;  
+    background-color: #ffffff;
+    font-family: 'Text Me One', sans-serif !important; 
+    margin-left: 80px;
+    margin-right: 80px;
 }
