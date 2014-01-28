@@ -63,7 +63,7 @@
 .search-form {
     margin-top: 30px;
     text-align: center;
-    color: orange;
+    color: #363636;
 }
 
 h3 {
@@ -73,11 +73,11 @@ h3 {
 
 .search-well {
     border-radius: 10px;
-    border: dotted gray 1px !important;
+    border: solid #363636 3px !important;
     padding-bottom: 30px;
     margin-bottom: 30px;
     font-family: 'Text Me One', sans-serif !important;
-    background-color: #F0FFF0 !important;
+    background-color: #F6F9ED !important;
 }
 
 #search-button {
@@ -88,13 +88,8 @@ h3 {
     margin-top: -6px;
 }
 
-.span1.visible-desktop {
-    color: lightgray !important;
-}
-
-.month_header {
-    background-color: lightgray !important;
-    color: #FF007F !important;
+#search-button:focus {
+    outline: none;
 }
 
 .well {
@@ -103,7 +98,7 @@ h3 {
 
 .activities {
     border-radius: 10%;
-    border: solid gray1px;
+    border: dotted #363636 2px;
     margin: 0 auto;
     margin-bottom: 20px !important;
     height: 270px !important;
@@ -112,7 +107,7 @@ h3 {
 
 .thumbnail {
     border-radius: 10%;
-    border: solid gray 1px;
+    border: dotted #363636 2px;
     margin: 0 auto;
     margin-bottom: 20px !important;
     height: 280px !important;
