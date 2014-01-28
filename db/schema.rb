@@ -30,6 +30,9 @@ ActiveRecord::Schema.define(version: 20131212210911439) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.text     "venue"
+    t.text     "age_range"
+    t.text     "headline"
   end
 
   add_index "activities", ["tags"], name: "index_activities_on_tags", using: :gin
@@ -77,6 +80,7 @@ ActiveRecord::Schema.define(version: 20131212210911439) do
     t.string   "commentable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "commenter_id"
   end
 
   add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
@@ -205,6 +209,7 @@ ActiveRecord::Schema.define(version: 20131212210911439) do
     t.text     "availability"
     t.text     "interests"
     t.text     "skills"
+    t.text     "certifications"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

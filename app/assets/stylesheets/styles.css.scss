@@ -9,11 +9,16 @@
     margin-top: 10px !important;
     margin-right: 15px;
     font-size: 20px;
-    font-family: 'Text Me One', sans-serif !important; 
+    font-family: 'Varela', sans-serif !important; 
 }
 
 .navbar-inverse .navbar-nav > li > a:hover {
   color: #363636;
+}
+
+.navbar-inverse .navbar-brand {
+    margin-top: -6px !important;
+    margin-right: 15px;
 }
 
 .subject   {
@@ -158,6 +163,7 @@ h7 {
 
 p {
     color: #363636 !important;
+    font-family: 'Varela', sans-serif !important; 
 }
 
 h8 {
@@ -178,7 +184,7 @@ ul.user-profile, .activity-ul-list {
     list-style: none !important;
     background-color: mintcream !important;
     border-radius: 10px;
-    font-family: 'Text Me One', sans-serif !important; 
+    font-family: 'Varela' !important; 
     border: 2px dotted lightgray;
 }
 
@@ -199,14 +205,20 @@ ul.user-profile, .activity-ul-list {
 #vendor-activities {
     margin-top: 40px;
     background-color: #ffffff;
-
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    border-top: solid lightgray 1px;
+    padding-top: 20px;
 }
 
 ul.vendor-activities {
     list-style: none !important;
     text-align: center;
     margin: 0 auto !important;
-    font-family: 'Text Me One', sans-serif !important; 
+    margin-top: 20px;
+    font-family: 'Varela', sans-serif !important; 
 }
 
 img.vendor-activities {
@@ -331,23 +343,61 @@ h9 {
     text-transform: lowercase;
  }   
 
-#comments {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    margin-bottom: 30px;
-    margin-left: 80px;
-    margin-right: 80px;
-    background-color: mintcream;
-}
-
 .comment {
     text-align: left !important;
-    margin-left: 55px !important;
-    margin-right: 30px !important;
+/*    margin-left: 55px !important;
+    margin-right: 30px !important;*/
+    font-family: 'Varela', sans-serif !important; 
+    list-style: none;
 }
 
  #reviews {
     margin-top: 40px;  
     background-color: #ffffff;
-    font-family: 'Text Me One', sans-serif !important; 
+    margin-bottom: 40px;
+    margin-left: 80px;
+    margin-right: 80px;
 }
+
+.comment-content-td {
+    width: 500px;
+}
+
+.commenter-td {
+    width: 75px;
+    padding-right: 50px !important;
+}
+
+#comments {
+    text-align: left !important;
+}
+
+#comments td { 
+    border-top: none !important;
+ }
+
+.commenter {
+    width: 90px;
+    height: 60px;
+}
+
+.comment-form {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+ div.mural {
+    background-size: cover !important; 
+    background-position: center;
+    background-attachment: fixed !important;
+    background-repeat:no-repeat;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 40px;
+    /*z-index: -1;*/
+} 
+
+

@@ -1,0 +1,37 @@
+<button type="button" class="btn btn-primary btn-medium" id="emails" data-toggle="modal" data-target="#myModal">
+  <span class="glyphicon glyphicon-envelope"></span> Message
+</button>
+
+<!-- Email Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel", style="font-size:20px; font-family: oxygen !important; font-weight: 900 !important;"><%= "To: #{@user.name}" %></h4>
+        <%= form_for [@user, Message.new], :action => :create, :html => {:class => 'form',:role=> 'form'} do |f| %>
+          <h4 class="modal-title" id="myModalLabel", style="font-size:20px; font-family: oxygen !important; font-weight: normal !important">
+              <%= f.label :subject, "Subject: " %>
+              <%= f.text_field :subject, :class => 'subject' %>
+          </h4>
+      </div>
+      <div class="modal-body">
+          <center>
+            <div class="form-group">
+              <%= f.text_area :body, cols: 10, rows: 40, :class => 'body' %></br>
+            </div>
+            <div class="form-group">
+              <%= f.hidden_field :recipient_id, {:value => "#{@user.id}"}%></br>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%= f.submit nil, class: "btn btn-primary" %>
+          <% end %>
+          </center>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- ################### END EMAIL MODAL ################### -->

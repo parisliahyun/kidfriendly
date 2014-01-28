@@ -1,7 +1,18 @@
-<div id="comments">
-  <% @comments.each do |comment| %>
-    <div class="comment">
-      <%= simple_format comment.content %>
-    </div>
-  <% end %>
-</div>
+
+<div class="well" id="reviews">
+  <h3>REVIEWS</h3>
+    <table class="table" id="comments">
+      <% @comments.each do |comment| %>
+          <% @commenters[0].each do |commenter| %> 
+            <tr id="comment-li">
+                <td class="commenter-td"><img class="commenter" src="<%= commenter.image_url %>" alt="profile image">
+                </td>
+              <td class="comment-content-td"><%= simple_format comment.content %></td>
+            </tr>
+            <tr>
+              <td class="commenter-td"><%= commenter.name %></td>
+            </tr>
+         <% end %>
+      <% end %>
+    </table>
+</div>    

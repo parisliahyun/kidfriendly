@@ -1,21 +1,25 @@
 class UsersController < ApplicationController
- before_filter :set_user
+  before_filter :set_user
 
- def index
-  @users = User.all
-  render :index
-end
+  def index
+    @users = User.all
+    render :index
+  end
 
-def show
+  def show
     @user = User.find(params[:id])
     @commentable = @user
     @comments = @commentable.comments
     @comment = Comment.new
+    @commenters = []
+    @comments.each do |comment|   
+      @commenters << User.where(id: [comment.commenter_id])
+    end
     @activities = Activity.where(vendor_id: [@user.id])
-    @basic_profile = BasicProfile.find_by(user_id: [@user.id])
-    # @appointments = Appointment.where(client_id: [@user.id]) 
+    @basic_profile = BasicProfile.find_by(user_id: [@user.id]) 
+    # binding.pry
     render :show
-end
+  end
 
 private
 

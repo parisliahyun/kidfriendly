@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
   
   def index
     @comments = @commentable.comments
+    @commenters = User.where(id: [@comment.commenter_id])
   end
 
   def new
@@ -11,6 +12,7 @@ class CommentsController < ApplicationController
   
 def create
   @comment = @commentable.comments.new(comment_params)
+  @comment.commenter_id = current_user.id
   if @comment.save
     redirect_to @commentable, notice: "Comment created."
   else
@@ -21,7 +23,7 @@ def create
   private
 
   def comment_params
-    params.require(:comment).permit(:content)
+    params.require(:comment).permit(:content, :commenter_id)
   end
 
   def load_commentable

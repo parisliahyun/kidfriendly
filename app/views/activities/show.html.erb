@@ -15,11 +15,12 @@
     </div>
     <div class="col-md-7" id="user-activity-col-7">
         <ul class="activity-ul-list">
-          <li>Name: <%= @activity.name %></li>
-          <li>Description: <%= @activity.description %></li>
-          <li>Tags: <%= @activity.tag_list %></li>
-          <li>Price: $<%= @activity.price %>0</li>
-          <li>This activity is taught by: <%= link_to @vendor.name, user_path(@vendor.id) %></li>
+          <li><%= @activity.headline %></li>
+          <li>DESCRIPTION: <%= @activity.description %></li>
+          <li>SUITABLE FOR AGES: <%= @activity.age_range %></li>
+          <li>LOCATION: <%= @activity.venue %></li>
+          <li>PRICE: $<%= @activity.price %>0</li>
+          <li>THIS ACTIVITY IS TAUGHT BY: <%= link_to @vendor.name, user_path(@vendor.id) %></li>
           <% if current_user.id == @activity.vendor_id %>
           <li><%= link_to "Edit this activity", edit_activity_path(@activity) %></li>
           <% end %>
@@ -28,13 +29,11 @@
   </div>
 </div>
 
-  <div class="well" id="reviews">
-    <center><h3>Reviews</h3></center>
-    <%= render "comments/comments" %>
+<div class="comment-form">
     <%= render "comments/form" %>
-  </div>
-</div>
-
+</div>    
+    <%= render "comments/comments" %>
+    
 <% content_for :javascript_includes do %>
   <%= javascript_include_tag 'jquery.raty.js','letsrate.js'%>
 <% end %> 
