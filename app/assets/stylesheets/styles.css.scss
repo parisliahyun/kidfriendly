@@ -61,21 +61,31 @@
 }
 
 .search-form {
+    margin-top: 30px;
     text-align: center;
     color: orange;
 }
 
 h3 {
     font-family: 'Text Me One', sans-serif !important;   
-    font-size: 18px;
+    font-size: 30px;
 }
 
 .search-well {
     border-radius: 10px;
-    border: solid gray 1px !important;
+    border: dotted gray 1px !important;
     padding-bottom: 30px;
     margin-bottom: 30px;
     font-family: 'Text Me One', sans-serif !important;
+    background-color: #F0FFF0 !important;
+}
+
+#search-button {
+    border-radius: 12px;
+    height: 30px;
+    width: 40px;
+    text-align: center;
+    margin-top: -6px;
 }
 
 .span1.visible-desktop {
@@ -242,7 +252,7 @@ img.vendor-activities {
 .q {
     color: gray !important;
     font-family:  'Text Me One', sans-serif !important; 
-    font-size: 16px;
+    font-size: 20px;
 }
 
 h9 {
