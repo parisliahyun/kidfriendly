@@ -7,14 +7,14 @@ class UsersController < ApplicationController
 end
 
 def show
-  @user = User.find(params[:id])
-  @commentable = @user
-  @comments = @commentable.comments
-  @comment = Comment.new
-  @activities = Activity.where(vendor_id: [@user.id])
-  @basic_profile = BasicProfile.find_by(user_id: [@user.id])
-  # @appointments = Appointment.where(client_id: [@user.id]) 
-  render :show
+    @user = User.find(params[:id])
+    @commentable = @user
+    @comments = @commentable.comments
+    @comment = Comment.new
+    @activities = Activity.where(vendor_id: [@user.id])
+    @basic_profile = BasicProfile.find_by(user_id: [@user.id])
+    # @appointments = Appointment.where(client_id: [@user.id]) 
+    render :show
 end
 
 private

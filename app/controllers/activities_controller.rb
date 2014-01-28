@@ -22,12 +22,16 @@ class ActivitiesController < ApplicationController
   end
 
   def show
-    @activity = Activity.find(params[:id])
-    @commentable = @activity
-    @comments = @commentable.comments
-    @comment = Comment.new
-    @vendor = User.find_by(id: [@activity.vendor_id.to_i])
-    render :show
+    if user_signed_in?
+      @activity = Activity.find(params[:id])
+      @commentable = @activity
+      @comments = @commentable.comments
+      @comment = Comment.new
+      @vendor = User.find_by(id: [@activity.vendor_id.to_i])
+      render :show
+    else
+      redirect_to new_user_registration_path   
+    end   
   end
 
   def index
