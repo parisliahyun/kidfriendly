@@ -4,13 +4,13 @@
     <table class="table" id="comments">
       <% @comments.each do |comment| %>
           <% @commenters[0].each do |commenter| %> 
+            <tr>
+              <td class="commenter-name"><%= commenter.name %></td>
+            </tr>
             <tr id="comment-li">
                 <td class="commenter-td"><img class="commenter" src="<%= commenter.image_url %>" alt="profile image">
                 </td>
               <td class="comment-content-td"><%= simple_format comment.content %></td>
-            </tr>
-            <tr>
-              <td class="commenter-td"><%= commenter.name %></td>
             </tr>
          <% end %>
       <% end %>
