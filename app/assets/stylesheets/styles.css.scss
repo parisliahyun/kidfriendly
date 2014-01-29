@@ -440,9 +440,10 @@ h10 {
  #search-form-control {
     text-transform: capitalize;
     z-index: 2;
-    margin-bottom: 10px;
     margin: 0 auto !important;
+    margin-bottom: 18px !important;
     font-size: 16px;
+    width: 175px;
     font-family: 'Nunito', sans-serif !important;
 }   
 
@@ -482,6 +483,8 @@ h3 {
     margin: 0 auto !important;
     margin-top: 5% !important;
     z-index: 2;
+    width: 300px;
+    text-align: center !important;
 }
 
 .q {
@@ -518,9 +521,11 @@ h10 {
 }
 
 .browse {
-    margin-top: 54%;
+    margin-top: 60%;
     margin-bottom: 45px;
+    margin-left: 20px;
     width: 100%;
+    text-align: center;
 }
     }
 
