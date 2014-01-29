@@ -1,10 +1,12 @@
  <div class="search-well">
   <div class="search-form">
-    <h3>search for an activity</h3>
+    <h3>Search for an activity</h3>
     <%= form_tag searches_path, :method => :post do %>  
     <!-- date_select :schedule, :from_date %> -->
+    
     <%= label_tag(:q, "Categories:", :class => 'q') %>
-    <%= select_tag :id, options_from_collection_for_select(Activity.all, :id, :tag_list, prompt: true, :multiple => true), :class => 'dropdown'  %>
+    <%= select_tag :id, options_from_collection_for_select(Activity.all, :id, :tag_list, prompt: true, :multiple => true), :class => 'form-control'  %>
+    
     <%= submit_tag "Go", id: "search-button", class: "btn btn-default" %>  
     <% end %>  
   </div> 

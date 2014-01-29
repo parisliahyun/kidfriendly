@@ -50,7 +50,7 @@
 
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #EEE5DE !important;
+    background-color: #EEE5DE !important;
 }
 
 div.mural {
@@ -92,7 +92,7 @@ div.mural {
 
 h3 {
     font-family: 'Text Me One', sans-serif !important;   
-    font-size: 30px;
+    font-size: 50px;
 }
 
 .search-well {
@@ -109,11 +109,13 @@ h3 {
 
 #search-button {
     border-radius: 12px;
-    height: 30px;
-    width: 40px;
+    height: 40px;
+    width: 50px;
     text-align: center;
     margin-top: -6px;
     z-index: 2;
+    font-size: 18px;
+    font-family: 'Nunito', sans-serif !important;
 }
 
 #search-button:focus {
@@ -287,9 +289,8 @@ img.vendor-activities {
 
 .q {
     color: #FDFDFD !important;
-    font-family:  'Text Me One', sans-serif !important; 
+    font-family: 'Nunito', sans-serif !important;
     font-size: 20px;
-    z-index: 1000;
 }
 
 h9 {
@@ -366,11 +367,7 @@ h9 {
     margin-left: 165px;
     margin-top: -2em;
 
-    }*/
-
- .dropdown {
-    text-transform: lowercase;
- }   
+    }*/  
 
 .comment {
     text-align: left !important;
@@ -418,11 +415,23 @@ h10 {
     font-family: 'Nunito', sans-serif !important;
     font-size: 30px;
     margin-top: 20px;
+    border: solid #363636 6px !important;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .browse {
-    margin-top: 52%;
-    margin-bottom: 15px;
+    margin-top: 54%;
+    margin-bottom: 45px;
     width: 100%;
+}
+
+.form-control {
+    text-transform: capitalize;
+    z-index: 2;
+    margin-bottom: 20px;
+    width: 30%;
+    font-size: 18px;
+    font-family: 'Nunito', sans-serif !important;
 }
 
