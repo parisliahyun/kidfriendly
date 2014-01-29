@@ -1,7 +1,8 @@
-<!-- <div class="mural" style="background-image: url( random_background %>)"> -->
-
-<div class="container">
-   <%= render 'form' %>
+<div class="mural" style="background-image: url( <%= random_background %>)"><%= render 'form' %></div>
+<div class="browse">
+  <h10>BROWSE BY ACTIVITY</h10>
+</div> 
+<div class="search-container">  
   <div class="row">
   <% @activities.each do |activity| %>
   <div class="col-md-4">
@@ -12,7 +13,7 @@
   </div>
   <% end %>
   </div>  
-</div>
+
 
 
 

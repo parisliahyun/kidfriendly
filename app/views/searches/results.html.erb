@@ -1,5 +1,4 @@
-<div class="container"> 
-  <%= render 'form' %>
+<div class="results-container"> 
   <h3>RESULTS FOR <%= @activity.tag_list.to_s.upcase %></h3>
   <div class="row">
   <% @matching_activities.each do |activity| %>
