@@ -4,7 +4,7 @@
       <h3><strong><%= @user.name.upcase %></strong></h3>
       <img class="profile-image" src="<%= @user.image_url %>" alt="profile image">
         <% if current_user.id == @user.id && @basic_profile == nil %>
-        <a href="/linkedin_oauth_url" class="btn btn-primary btn-larg">Connect to LinkedIn</a>
+        <a href="/linkedin_oauth_url" class="btn btn-primary" id="linkedin-button">Connect to LinkedIn</a>
         <% end  %>
         <%= render "users/message" %>
         <center><%= rating_for @user %></center>
@@ -13,8 +13,8 @@
       <ul class="user-profile"> 
         <li>About: <%= @user.about %></li>
         <li>Interests: <%= @user.interests %></li>
-        <li>Availability: <%= @user.availability %></li>
         <% if @user.role == "vendor" %>
+        <li>Availability: <%= @user.availability %></li>
         <li>Certifications: <%= @user.certifications %></li> 
         <li>Skills: <%= @user.skills %></li>  
         <% end %>
