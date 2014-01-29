@@ -4,7 +4,7 @@
     <table class="table" id="comments">
       <% @comments.each do |comment| %>
           <% @commenters[0].each do |commenter| %> 
-            <tr>
+            <tr class="commenter-name">
               <td class="commenter-name"><%= commenter.name %></td>
             </tr>
             <tr id="comment-li">
