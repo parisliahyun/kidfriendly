@@ -5,7 +5,7 @@
 <div class="search-container">  
   <div class="row">
   <% @activities.each do |activity| %>
-  <div class="col-md-4 col-sm-3" id="activity-squares">
+  <div class="col-md-4 col-sm-3 col-xs-12" id="activity-squares">
      <a href="<%= activity_path(activity.id) %>" class="thumbnail">
       <img class="activities" src="<%= activity.image_url %>" alt="activity image" height="280px" width="355px">
       <h7 class="hover-text" style="vertical-align: middle !important"><%= activity.headline %></h7>  

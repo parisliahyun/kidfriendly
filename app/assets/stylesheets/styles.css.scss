@@ -527,6 +527,56 @@ h10 {
     width: 100%;
     text-align: center;
 }
+
+
+.activities {
+    border-radius: 10%;
+    border: dotted #363636 2px;
+    margin: 0 auto;
+    margin-bottom: 20px !important;
+    height: 150px !important;
+    width: 250px !important;
+}
+
+.thumbnail {
+    border-radius: 10%;
+    border: dotted #363636 2px;
+    margin: 0 auto;
+    margin-bottom: 20px !important;
+    height: 150px !important;
+    width: 250px !important;
+}
+
+.thumbnail:hover .hover-text {
+    visibility: visible;
+    background-color: green;
+    opacity: .8;
+    border-radius: 10%;
+    border: solid gray 1px;
+    margin: 0 auto;
+    margin-bottom: 20px !important;
+    height: 150px !important;
+    width: 250px !important;
+}
+
+.img.activities {
+    border-radius: 10%;
+    margin: 0 auto;
+    margin-bottom: 20px !important;  
+    height: 150px !important;
+    width: 250px !important;
+}
+
+h7 {
+    font-family: 'Text Me One', sans-serif !important;
+    font-size: 16px !important;
+    color: #ffffff !important;
+    text-align: center;
+    padding-top: 20px !important;
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+
+}
     }
 
 
