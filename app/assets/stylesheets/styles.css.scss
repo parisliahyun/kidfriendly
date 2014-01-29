@@ -435,6 +435,48 @@ h10 {
     font-family: 'Nunito', sans-serif !important;
 }
 
+@media (max-width: 980px) {
+
+.activities {
+    border-radius: 10%;
+    border: dotted #363636 2px;
+    margin: 0 auto;
+    margin-bottom: 20px !important;
+    height: 150px !important;
+    width: 250px !important;
+}
+
+.thumbnail {
+    border-radius: 10%;
+    border: dotted #363636 2px;
+    margin: 0 auto;
+    margin-bottom: 20px !important;
+    height: 150px !important;
+    width: 250px !important;
+}
+
+.thumbnail:hover .hover-text {
+    visibility: visible;
+    background-color: green;
+    opacity: .8;
+    border-radius: 10%;
+    border: solid gray 1px;
+    margin: 0 auto;
+    margin-bottom: 20px !important;
+    height: 150px !important;
+    width: 250px !important;
+}
+
+.img.activities {
+    border-radius: 10%;
+    margin: 0 auto;
+    margin-bottom: 20px !important;  
+    height: 150px !important;
+    width: 250px !important;
+}
+
+    }
+
 @media (max-width: 768px) {
 
  #search-form-control {
