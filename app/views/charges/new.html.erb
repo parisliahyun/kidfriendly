@@ -1,12 +1,15 @@
-<%= form_tag charges_path do %>
-<form action="/charge" method="POST">
-  <script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="pk_test_lre2JS3OVUNRpIPcNMSxaoWS"
-    data-image="/square-image.png"
-    data-name="Kid-Friend.ly"
-    data-description="$28.00"
-    data-amount="2800">
-  </script>
-</form>
-<% end %>
+<div class="well" id="new-charge">
+  <img src="https://stripe.com/img/about/logos/logos/black.png" height='40px', width ='150px' alt="stripe logo">
+  <%= form_tag charges_path do %>
+  <form action="/charge" method="POST">
+    <script
+      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="pk_test_lre2JS3OVUNRpIPcNMSxaoWS"
+      data-image="http://i1292.photobucket.com/albums/b561/parisliahyun/b05a9daf-71a1-4995-90fc-8e6b9ccb2c77_zps692dda59.gif"
+      data-name="Kid-Friend.ly"
+      data-description="$28.00"
+      data-amount="2800">
+    </script>
+  </form>
+  <% end %>
+</div>
